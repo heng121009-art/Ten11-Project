@@ -1,0 +1,717 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "group": "tops",
+      "name": "Gothic Graphic Oversized Cotton Tee",
+      "price": 15.83,
+      "oldPrice": 17.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021667/A7R07864%20-%20Copy-cr-450x672.jpg",
+      "colors": [
+        "#f3f2f2",
+        "#1565c0"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Gothic Graphic Oversized Cotton Tee. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021667/A7R07864%20-%20Copy-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021667/STU_4492.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021667/STU_4486.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "group": "tops",
+      "name": "Graphic Printed T-Shirt",
+      "price": 13.13,
+      "oldPrice": 14.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021815/STU_6823-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Graphic Printed T-Shirt. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021815/STU_6823-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021815/STU_6815.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021815/STU_6813.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "group": "tops",
+      "name": "Still Burning Graphic Print Tee",
+      "price": 11.66,
+      "oldPrice": 12.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021784/STU_9265-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Still Burning Graphic Print Tee. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021784/STU_9265-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021784/STU_9273.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021784/STU_9260.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "group": "tops",
+      "name": "Shoulder-Zip Raglan Short Sleeve T-Shirt",
+      "price": 13.13,
+      "oldPrice": 14.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021816/STU_0187-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Shoulder-Zip Raglan Short Sleeve T-Shirt. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021816/STU_0187-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021816/STU_0185.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021816/STU_0183.jpg "
+      ]
+    },
+    {
+      "id": 5,
+      "group": "tops",
+      "name": "Cuban Collar Short Shirt",
+      "price": 18.86,
+      "oldPrice": 20.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226011617/STU_2158-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Cuban Collar Short Shirt. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226011617/STU_2158-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226011617/STU_2153.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226011617/STU_2152.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "group": "tops",
+      "name": "Slim-Fit Ribbed Cotton Tank Top",
+      "price": 12.23,
+      "oldPrice": 13.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021797/STU_0840-cr-450x672.jpg",
+      "colors": [
+        "#5C483A",
+        "#010101"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Slim-Fit Ribbed Cotton Tank Top. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021797/STU_0840-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021797/STU_0838.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226021797/STU_0837.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "group": "tops",
+      "name": "Graphic Long-Sleeve T-Shirt",
+      "price": 15.83,
+      "oldPrice": 17.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226041967/STU_0114-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Graphic Long-Sleeve T-Shirt. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226041967/STU_0114-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226041967/STU_0110.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226041967/STU_0109.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "group": "tops",
+      "name": "Casual Printed Streetwear Hoodie",
+      "price": 21.23,
+      "oldPrice": 23.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226041966/STU_2245-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Casual Printed Streetwear Hoodie. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226041966/STU_2245-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226041966/STU_2238.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226041966/STU_2236.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "group": "tops",
+      "name": "Graphic Long-Sleeve Tee",
+      "price": 19.76,
+      "oldPrice": 21.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602872/STU_6088-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Graphic Long-Sleeve Tee. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602872/STU_6088-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/2112602872/STU_6084.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/2112602872/STU_6083.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "group": "tops",
+      "name": "Graphic Washed Cotton Tee",
+      "price": 13.46,
+      "oldPrice": 14.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226061965/STU_1285-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Graphic Washed Cotton Tee. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226061965/STU_1285-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226061965/STU_1280.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/catalog/products/2026-08/21226061965/STU_1279.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "group": "bestSeller",
+      "name": "Sleeveless Tank Top",
+      "price": 6.48,
+      "oldPrice": 12.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-05/21226021903/STU_6027-cr-450x672.jpg",
+      "colors": [
+        "#f3f2f2",
+        "#1565c0"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Sleeveless Tank Top. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-05/21226021903/STU_6027-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-05/21226021903/STU_6027-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-05/21226021903/STU_6027-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "group": "bestSeller",
+      "name": "Regular Tank Top With Embroidery",
+      "price": 4.8,
+      "oldPrice": 9.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/2112509769/STU_8730-cr-450x672.jpg",
+      "colors": [
+        "#000000",
+        "#808080"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Regular Tank Top With Embroidery. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/2112509769/STU_8730-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/2112509769/STU_8730-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/2112509769/STU_8730-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "group": "bestSeller",
+      "name": "Flared Leg Denim Jeans",
+      "price": 10.98,
+      "oldPrice": 21.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-12/21225091514/ZD__1700-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Flared Leg Denim Jeans. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-12/21225091514/ZD__1700-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-12/21225091514/ZD__1700-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-12/21225091514/ZD__1700-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "group": "bestSeller",
+      "name": "Regular T-Shirt",
+      "price": 7.3,
+      "oldPrice": 14.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081369/ZD__6369-cr-450x672.jpg",
+      "colors": [
+        "#1b2a4a"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Regular T-Shirt. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081369/ZD__6369-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081369/ZD__6369-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081369/ZD__6369-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "group": "bestSeller",
+      "name": "Loose Denim Jorts",
+      "price": 10.8,
+      "oldPrice": 21.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081461/ZD__7412-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Loose Denim Jorts. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081461/ZD__7412-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081461/ZD__7412-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081461/ZD__7412-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 16,
+      "group": "bestSeller",
+      "name": "Contrast Stitch T-Shirt",
+      "price": 6.48,
+      "oldPrice": 12.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081433%20Replace/ZD__8340-cr-450x672.jpg",
+      "colors": [
+        "#f5ebe0",
+        "#000000"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Contrast Stitch T-Shirt. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081433%20Replace/ZD__8340-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081433%20Replace/ZD__8340-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2025-11/21225081433%20Replace/ZD__8340-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 17,
+      "group": "bestSeller",
+      "name": "Wide Leg Trousers",
+      "price": 10.48,
+      "oldPrice": 20.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-03/21225121556/PTAK5429-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Wide Leg Trousers. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-03/21225121556/PTAK5429-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-03/21225121556/PTAK5429-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-03/21225121556/PTAK5429-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 18,
+      "group": "bestSeller",
+      "name": "Loose Fitted T-Shirt",
+      "price": 7.48,
+      "oldPrice": 14.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/21225091403/STU_2225-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Loose Fitted T-Shirt. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/21225091403/STU_2225-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/21225091403/STU_2225-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/21225091403/STU_2225-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 19,
+      "group": "bestSeller",
+      "name": "Loose Denim Jorts",
+      "price": 7.19,
+      "oldPrice": 23.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/21225091407/STU_9866-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Loose Denim Jorts. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/21225091407/STU_9866-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/21225091407/STU_9866-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-01/21225091407/STU_9866-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 20,
+      "group": "bottoms",
+      "name": "Loose Fit Denim Jorts",
+      "price": 20.95,
+      "oldPrice": 20.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602873/STU_2175-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Loose Fit Denim Jorts. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602873/STU_2175-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602873/STU_2175-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602873/STU_2175-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 21,
+      "group": "bottoms",
+      "name": "Distressed Patchwork Wide-Leg Jeans",
+      "price": 11.48,
+      "oldPrice": 22.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07-II/21226041907/PTAK3267-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Distressed Patchwork Wide-Leg Jeans. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07-II/21226041907/PTAK3267-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07-II/21226041907/PTAK3267-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07-II/21226041907/PTAK3267-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 22,
+      "group": "bottoms",
+      "name": "Washed Baggy Denim Jorts",
+      "price": 13.27,
+      "oldPrice": 18.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602867/STU_0370-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Washed Baggy Denim Jorts. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602867/STU_0370-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602867/STU_0370-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/2112602867/STU_0370-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 23,
+      "group": "bottoms",
+      "name": "Wide-Leg Denim Jeans with Distressed Fringe",
+      "price": 23.95,
+      "oldPrice": 23.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021639/STU_0197-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Wide-Leg Denim Jeans with Distressed Fringe. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021639/STU_0197-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021639/STU_0197-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021639/STU_0197-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 24,
+      "group": "bottoms",
+      "name": "Oversized Utility Cargo Shorts",
+      "price": 12.57,
+      "oldPrice": 20.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07-II/21226021744/STU_7600-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Oversized Utility Cargo Shorts. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07-II/21226021744/STU_7600-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07-II/21226021744/STU_7600-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07-II/21226021744/STU_7600-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 25,
+      "group": "bottoms",
+      "name": "Techwear Wide Leg Pants",
+      "price": 11.58,
+      "oldPrice": 28.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-06/21226021760/PTAK0121-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Techwear Wide Leg Pants. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-06/21226021760/PTAK0121-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-06/21226021760/PTAK0121-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-06/21226021760/PTAK0121-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 26,
+      "group": "bottoms",
+      "name": "Wide-Leg Double-Waist Sweatpants",
+      "price": 28.95,
+      "oldPrice": 28.95,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021682/STU_0140-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Wide-Leg Double-Waist Sweatpants. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021682/STU_0140-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021682/STU_0140-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021682/STU_0140-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 27,
+      "group": "bottoms",
+      "name": "Relaxed Straight-Leg Denim Jeans",
+      "price": 22.59,
+      "oldPrice": 22.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07/2112602895/PTAK0198-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Relaxed Straight-Leg Denim Jeans. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07/2112602895/PTAK0198-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07/2112602895/PTAK0198-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-07/2112602895/PTAK0198-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 28,
+      "group": "bottoms",
+      "name": "Baggy Paneled Grunge Jeans",
+      "price": 17.91,
+      "oldPrice": 25.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021792/STU_1352-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Baggy Paneled Grunge Jeans. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021792/STU_1352-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021792/STU_1352-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-08/21226021792/STU_1352-cr-450x672.jpg"
+      ]
+    },
+    {
+      "id": 29,
+      "group": "bottoms",
+      "name": "Baggy Denim Jeans",
+      "price": 22.59,
+      "oldPrice": 22.59,
+      "image": "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-06/21226021788/STU_0958-cr-450x672.jpg",
+      "colors": [],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "modelInfo": "Model is 180 cm / 5'11\" and wears size M. Chest 92 cm, Waist 74 cm, Hip 94 cm.",
+      "description": "Baggy Denim Jeans. Soft, breathable fabric with a relaxed, comfortable fit. Easy to layer or wear on its own. Machine wash cold.",
+      "images": [
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-06/21226021788/STU_0958-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-06/21226021788/STU_0958-cr-450x672.jpg",
+        "https://zand.sgp1.cdn.digitaloceanspaces.com/cache/catalog/products/2026-06/21226021788/STU_0958-cr-450x672.jpg"
+      ]
+    }
+  ]
+}

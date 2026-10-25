@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEN11 - Hero Slideshow</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="overflow-x-hidden bg-[#f8f9fa] font-sans text-[#111]">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="sticky top-0 z-[1000] border-b border-neutral-200 bg-white">
+    <div class="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6">
+      <div class="flex flex-1 items-center">
+        <button class="group flex flex-col gap-[5px] p-2" aria-label="Menu">
+          <span class="block h-0.5 w-[22px] bg-[#111] group-hover:bg-neutral-500"></span>
+          <span class="block h-0.5 w-[22px] bg-[#111] group-hover:bg-neutral-500"></span>
+          <span class="block h-0.5 w-[22px] bg-[#111] group-hover:bg-neutral-500"></span>
+        </button>
+      </div>
+      <div class="flex flex-1 justify-center">
+        <a href="index.html" class="flex items-center gap-1 text-[26px] font-extrabold tracking-[2px] text-[#111]">TEN<span
+            class="font-light">•</span>ELEVEN</a>
+      </div>
+      <div class="flex flex-1 items-center justify-end gap-1.5">
+        <div id="searchWrap" class="group relative flex items-center">
+          <button id="searchBtn" aria-label="Search"
+            class="flex h-[42px] w-[42px] items-center justify-center rounded-full text-lg hover:bg-neutral-100"><i
+              class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <button aria-label="Notifications"
+          class="relative flex h-[42px] w-[42px] items-center justify-center rounded-full text-lg hover:bg-neutral-100">
+          <i class="fa-regular fa-bell"></i>
+          <span
+            class="absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#e53935] text-[10px] font-semibold text-white">3</span>
+        </button>
+        <button aria-label="Profile"
+          class="flex h-[42px] w-[42px] items-center justify-center rounded-full text-lg hover:bg-neutral-100"><i
+            class="fa-regular fa-user"></i></button>
+        <button aria-label="Bag"
+          class="relative flex h-[42px] w-[42px] items-center justify-center rounded-full text-lg hover:bg-neutral-100">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span
+            class="absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#e53935] text-[10px] font-semibold text-white">0</span>
+        </button>
+      </div>
+    </div>
+    <div class="hidden border-t border-neutral-100 bg-white md:block">
+      <ul id="navMenu" class="mx-auto flex max-w-[1400px] justify-center gap-2 px-6"></ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" class="mx-auto mb-[30px] mt-5 max-w-[1400px] px-4">
+    <div class="relative overflow-hidden rounded-2xl shadow-[0_12px_32px_rgba(0,0,0,.2)]">
+      <button data-prev aria-label="Previous Slide"
+        class="absolute left-5 top-1/2 z-10 flex h-[38px] w-[38px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-base shadow-[0_4px_14px_rgba(0,0,0,.3)] transition hover:scale-110 hover:bg-white md:h-[46px] md:w-[46px]"><i
+          class="fa-solid fa-chevron-left"></i></button>
+      <div data-track
+        class="flex transition-transform duration-[600ms] ease-[cubic-bezier(.25,1,.5,1)] will-change-transform"></div>
+      <button data-next aria-label="Next Slide"
+        class="absolute right-5 top-1/2 z-10 flex h-[38px] w-[38px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-base shadow-[0_4px_14px_rgba(0,0,0,.3)] transition hover:scale-110 hover:bg-white md:h-[46px] md:w-[46px]"><i
+          class="fa-solid fa-chevron-right"></i></button>
+      <div data-dots class="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2.5"></div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORY GRID ========== -->
+  <section class="mx-auto mb-[50px] mt-10 max-w-[1400px] px-4">
+    <div id="categories" class="grid grid-cols-2 gap-4 md:gap-5 lg:grid-cols-4 lg:gap-6"></div>
+  </section>
+
+  <!-- ========== LATEST COLLECTIONS ========== -->
+  <section id="latest" class="mx-auto mb-[60px] mt-2.5 max-w-[1400px] px-4">
+    <div class="mb-5">
+      <h2 class="mb-1 text-lg font-extrabold uppercase tracking-[.5px] md:text-[22px]">LATEST COLLECTIONS!</h2>
+      <p class="text-sm text-neutral-600">Discover Our Newest Styles</p>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-[0_8px_24px_rgba(0,0,0,.12)]">
+      <button data-prev aria-label="Previous Slide"
+        class="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded bg-black/50 text-white transition hover:scale-105 hover:bg-black/85"><i
+          class="fa-solid fa-chevron-left"></i></button>
+      <div data-track
+        class="flex transition-transform duration-[600ms] ease-[cubic-bezier(.25,1,.5,1)] will-change-transform"></div>
+      <button data-next aria-label="Next Slide"
+        class="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded bg-black/50 text-white transition hover:scale-105 hover:bg-black/85"><i
+          class="fa-solid fa-chevron-right"></i></button>
+      <div data-dots class="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2"></div>
+    </div>
+  </section>
+
+  <!-- ========== ON-TREND TOPS ========== -->
+  <section id="onTrend" class="mx-auto mb-[70px] max-w-[1400px] px-4">
+    <div class="mb-6 flex items-center justify-between">
+      <h2 class="flex items-center gap-2 text-[22px] font-extrabold md:text-[28px]">On-Trend Tops <span
+          class="text-[26px]">🔥</span></h2>
+      <a href="#" class="text-[15px] font-medium underline underline-offset-[3px] hover:text-[#0052cc]">Shop Now</a>
+    </div>
+    <div class="relative">
+      <button data-prev aria-label="Previous"
+        class="absolute left-0 top-[42%] z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-300 bg-white text-[15px] shadow-[0_4px_14px_rgba(0,0,0,.12)] transition hover:border-[#111] hover:bg-[#111] hover:text-white md:-left-2 md:h-[42px] md:w-[42px]"><i
+          class="fa-solid fa-chevron-left"></i></button>
+      <div class="overflow-hidden">
+        <div data-track
+          class="flex transition-transform duration-[550ms] ease-[cubic-bezier(.25,1,.5,1)] will-change-transform">
+        </div>
+      </div>
+      <button data-next aria-label="Next"
+        class="absolute right-0 top-[42%] z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-300 bg-white text-[15px] shadow-[0_4px_14px_rgba(0,0,0,.12)] transition hover:border-[#111] hover:bg-[#111] hover:text-white md:-right-2 md:h-[42px] md:w-[42px]"><i
+          class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div data-dots class="mt-6 flex justify-center gap-2"></div>
+  </section>
+
+  <!-- ========== FEATURE CARDS ========== -->
+  <section class="mx-auto mb-[70px] max-w-[1400px] px-4">
+    <div id="features" class="grid grid-cols-2 gap-2 md:gap-4"></div>
+  </section>
+
+  <!-- ========== BEST SELLER / BOTTOMS (rendered by JS) ========== -->
+  <div id="bs1"></div>
+  <div id="bs2"></div>
+
+  <!-- ========== MORE COLLECTIONS ========== -->
+  <section class="mx-auto mb-[70px] max-w-[1400px] px-4">
+    <h2 class="text-lg font-bold uppercase leading-tight md:text-[22px]">More Collections</h2>
+    <p class="mb-[22px] mt-1 text-[15px]">Shop Our Collections!</p>
+    <div id="more" class="grid grid-cols-1 gap-2.5 md:grid-cols-3"></div>
+  </section>
+
+  <!-- ========== VOUCHER ========== -->
+  <section class="mx-auto mb-[70px] max-w-[1400px] px-4">
+    <h2 class="text-lg font-bold uppercase leading-tight md:text-[22px]">Unlock Exclusive Voucher 💳</h2>
+    <p class="mb-[22px] mt-1 text-[15px]">Valid from 19 – 23 October</p>
+
+    <div class="relative grid min-h-[360px] items-center gap-6 overflow-hidden px-5 pb-[70px] pt-7 text-center text-white
+    before:pointer-events-none before:absolute before:inset-0 before:opacity-[.18] before:mix-blend-overlay before:content-['']
+    before:[background-image:radial-gradient(rgba(255,255,255,.9)_1px,transparent_1.2px)] before:[background-size:5px_5px]
+    bg-[radial-gradient(circle_at_12%_30%,rgba(255,255,255,.28),transparent_45%),radial-gradient(circle_at_90%_90%,rgba(255,255,255,.12),transparent_40%),linear-gradient(100deg,#6a82bd_0%,#3a56a0_45%,#1d3a8c_100%)]
+    min-[901px]:grid-cols-[1.05fr_1fr] min-[901px]:px-12 min-[901px]:pb-14 min-[901px]:pt-10 min-[901px]:text-left">
+
+      <div class="relative z-[1] font-['Arial_Black',Impact,sans-serif] leading-[.85]">
+        <div
+          class="text-[clamp(90px,15vw,230px)] tracking-[-2px] text-[#e3e9f8] [text-shadow:0_3px_0_#9fb0dc,0_8px_24px_rgba(10,20,70,.45)]">
+          USE</div>
+        <div
+          class="mt-1.5 whitespace-nowrap text-[clamp(30px,4.6vw,70px)] text-[#cfd8f0] [text-shadow:0_3px_0_#8fa2d4,0_6px_18px_rgba(10,20,70,.45)]">
+          PROMO CODE</div>
+      </div>
+
+      <div class="relative z-[1] flex flex-col gap-[22px] text-center">
+        <div class="font-['Arial_Black',Impact,sans-serif] text-[clamp(18px,2.2vw,30px)] tracking-wide">TEN&bull;ELEVEN
+        </div>
+
+        <div class="flex flex-col items-center gap-1">
+          <div
+            class="font-['Arial_Black',Impact,sans-serif] text-[clamp(26px,3.8vw,56px)] leading-none [text-shadow:0_0_18px_rgba(255,255,255,.55)]">
+            EXTRA $15 OFF</div>
+          <div class="text-[clamp(18px,2.6vw,38px)] font-light uppercase">Min. spend: $50</div>
+          <button data-code="OCT15" title="Click to copy"
+            class="mt-1 rounded border border-dashed border-white/70 bg-white/10 px-3.5 py-1.5 text-sm font-extrabold uppercase tracking-[.5px] transition hover:bg-white/20">Use
+            code: OCT15</button>
+        </div>
+
+        <div class="flex flex-col items-center gap-1 min-[901px]:self-end">
+          <div
+            class="font-['Arial_Black',Impact,sans-serif] text-[clamp(26px,3.8vw,56px)] leading-none [text-shadow:0_0_18px_rgba(255,255,255,.55)]">
+            EXTRA $6 OFF</div>
+          <div class="text-[clamp(18px,2.6vw,38px)] font-light uppercase">Min. spend: $20</div>
+          <button data-code="OCT6" title="Click to copy"
+            class="mt-1 rounded border border-dashed border-white/70 bg-white/10 px-3.5 py-1.5 text-sm font-extrabold uppercase tracking-[.5px] transition hover:bg-white/20">Use
+            code: OCT6</button>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-[18px] left-5 right-5 z-[1] flex flex-wrap justify-center gap-x-5 gap-y-1.5 text-xs uppercase min-[901px]:left-12 min-[901px]:right-12 min-[901px]:justify-start min-[901px]:gap-x-12 min-[901px]:text-sm">
+        <span>Online exclusive</span><span>T&amp;Cs apply</span><b class="font-extrabold">19 - 23 October 2026</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== #TEN11LOOKS ========== -->
+  <section class="mb-[70px]">
+    <div class="mx-auto mb-[18px] max-w-[1400px] px-4">
+      <h2 class="text-[22px] font-extrabold uppercase leading-[1.15] md:text-[30px]">#TEN11LOOKS</h2>
+      <p class="mt-1 text-[15px] md:text-lg">Real people. Real fashion. Click and Shop their looks!</p>
+    </div>
+    <div id="looks" class="grid w-full grid-cols-1 gap-1.5 md:grid-cols-3 md:gap-2.5"></div>
+  </section>
+
+  <hr>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="mt-10 bg-white pb-7 pt-11 sm:pt-[70px]">
+    <div class="mx-auto max-w-[1400px] px-4">
+      <div
+        class="grid grid-cols-1 gap-[34px] min-[601px]:grid-cols-2 min-[601px]:gap-x-8 min-[601px]:gap-y-10 min-[1101px]:grid-cols-4">
+
+        <div>
+          <h4 class="mb-[18px] text-[19px] font-semibold sm:mb-[26px]">Download App</h4>
+          <div class="flex items-center gap-3.5">
+            <div class="h-[100px] w-[100px] shrink-0 bg-white"><img class="block h-full w-full object-contain"
+                src="https://storage4.me-qr.com/qr/417040299.png" alt="Scan to download the app"></div>
+            <div class="flex flex-col gap-1.5">
+              <a href="#" aria-label="Get it on Google Play"
+                class="flex h-[46px] w-[150px] items-center gap-2 rounded-lg border border-neutral-600 bg-black px-2.5 text-white transition hover:opacity-85">
+                <i class="fa-brands fa-google-play text-2xl"></i>
+                <span><small class="block text-[8px] uppercase leading-[1.1] tracking-[.5px]">Get it on</small><strong
+                    class="block text-[17px] font-medium leading-[1.1]">Google Play</strong></span>
+              </a>
+              <a href="#" aria-label="Download on the App Store"
+                class="flex h-[46px] w-[150px] items-center gap-2 rounded-lg border border-neutral-600 bg-black px-2.5 text-white transition hover:opacity-85">
+                <i class="fa-brands fa-apple text-2xl"></i>
+                <span><small class="block text-[8px] uppercase leading-[1.1] tracking-[.5px]">Download on
+                    the</small><strong class="block text-[17px] font-medium leading-[1.1]">App Store</strong></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="mb-[18px] text-[19px] font-semibold sm:mb-[26px]">Follow Us</h4>
+          <ul id="follow" class="flex flex-col gap-3.5"></ul>
+        </div>
+
+        <div>
+          <h4 class="mb-[18px] text-[19px] font-semibold sm:mb-[26px]">Customer Service</h4>
+          <ul id="service"  class="flex flex-col gap-3.5"></ul>
+        </div>
+
+        <div>
+          <h4 class="mb-[18px] text-[19px] font-semibold sm:mb-[26px]">We Accept</h4>
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-2.5 text-sm font-extrabold text-white">
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center whitespace-nowrap rounded bg-[#0e5a8a] px-2 text-[17px] tracking-wide text-[#5fd0e6]">ABA
+              PAY</span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center whitespace-nowrap rounded bg-[#1a3f9c] px-2 text-xl italic">VISA</span>
+            <span class="inline-flex h-10 min-w-[62px] items-center justify-center rounded bg-black px-2"><span
+                class="h-[22px] w-[22px] rounded-full bg-[#eb001b]"></span><span
+                class="-ml-2 h-[22px] w-[22px] rounded-full bg-[#f79e1b] opacity-95"></span></span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center whitespace-nowrap rounded bg-gradient-to-r from-[#d71e2b] via-[#0c4f8f] via-[55%] to-[#0b7a75] px-2 text-xs italic">UnionPay</span>
+            <span
+              class="inline-flex h-10 min-w-[50px] items-center justify-center whitespace-nowrap rounded bg-white px-2 text-xl tracking-wide text-[#1a3f9c]">JCB</span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center whitespace-nowrap rounded bg-[#8ec63f] px-2 text-[11px] italic">Wing
+              Bank</span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center gap-1.5 whitespace-nowrap rounded border border-neutral-100 bg-white px-2 text-[15px] font-normal text-neutral-700"><i
+                class="fa-solid fa-building-columns text-xl text-neutral-500"></i> Bank Transfer</span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center gap-1.5 whitespace-nowrap rounded border border-neutral-100 bg-white px-2 text-[15px] font-normal text-neutral-700"><i
+                class="fa-solid fa-money-bill-wave text-xl text-neutral-500"></i> Cash on Delivery</span>
+          </div>
+        </div>
+      </div>
+      <p class="mt-14 text-center text-[17px]">Powered By TEN11 &copy; 2026</p>
+    </div>
+  </footer>
+
+  <script>
+/* TEN11 shopping bag + wishlist drawer (shared logic, inlined in each page) */
+(function () {
+  const KEY = 'ten11_cart', WKEY = 'ten11_wish', MAX = 10;
+  const ALL_SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  const cents = n => Math.round(n * 100);
+  const money = c => '$' + (c / 100).toFixed(2);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const read = k => { try { const v = JSON.parse(localStorage.getItem(k)); return Array.isArray(v) ? v : []; } catch (e) { return []; } };
+  const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } };
+
+  let items = read(KEY), wish = read(WKEY), tab = 'bag';
+  const save = () => { write(KEY, items); write(WKEY, wish); };
+
+  document.body.insertAdjacentHTML('beforeend', `
+  <div id="cartOverlay" class="pointer-events-none fixed inset-0 z-[3000] bg-black/50 opacity-0 transition-opacity duration-300"></div>
+  <aside id="cartDrawer" aria-label="Shopping bag" aria-hidden="true"
+    class="fixed right-0 top-0 z-[3001] flex h-full w-full max-w-[560px] translate-x-full flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300">
+    <div class="sticky top-0 z-10 flex shrink-0 items-center bg-white">
+      <div class="grid flex-1 grid-cols-2">
+        <button data-tab="bag" class="mx-4 flex items-center justify-center gap-2 border-b-2 py-4 text-[19px] font-medium"></button>
+        <button data-tab="wish" class="mx-4 flex items-center justify-center gap-2 border-b-2 py-4 text-[19px] font-medium"></button>
+      </div>
+      <button id="cartClose" aria-label="Close" class="mr-3 flex h-10 w-10 items-center justify-center rounded-full hover:bg-neutral-100"><i class="fa-solid fa-xmark text-xl"></i></button>
+    </div>
+    <div id="cartBody" class="flex-1"></div>
+  </aside>`);
+
+  const $ = s => document.querySelector(s);
+  const overlay = $('#cartOverlay'), drawer = $('#cartDrawer'), body = $('#cartBody');
+
+  function open(t) {
+    if (t) tab = t;
+    render();
+    drawer.classList.remove('translate-x-full');
+    overlay.classList.remove('pointer-events-none', 'opacity-0');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    drawer.classList.add('translate-x-full');
+    overlay.classList.add('pointer-events-none', 'opacity-0');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  const pill = n => `<span class="inline-flex h-7 min-w-[28px] items-center justify-center rounded-full bg-neutral-100 px-2 text-[15px] font-normal text-neutral-600">${n}</span>`;
+  const badge = `<span class="mb-1.5 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#1f2937] px-2.5 py-1 text-xs font-semibold text-white"><i class="fa-solid fa-sun text-[#ffd54f]"></i> New In</span>`;
+
+  const totalQty = () => items.reduce((s, i) => s + i.qty, 0);
+  let pending = 0;                       // adds still flying to the bag icon
+  function updateBadge() {
+    const n = totalQty();
+    document.querySelectorAll('button[aria-label="Bag"] span').forEach(b => {
+      b.textContent = n; b.style.display = n ? '' : 'none';
+    });
+  }
+
+  /* Fly a copy of the product photo to the bag icon in the navbar */
+  function fly(src) {
+    const bag = document.querySelector('button[aria-label="Bag"]');
+    if (!src || !bag || !src.getBoundingClientRect || !src.animate) return Promise.resolve();
+    const a = src.getBoundingClientRect(), t = bag.getBoundingClientRect();
+    const w = 110, h = 147;
+    const top = Math.max(a.top, 0), bottom = Math.min(a.bottom, innerHeight);
+    const cx = Math.min(Math.max(a.left + a.width / 2, 0), innerWidth);
+    const cy = (top + Math.max(bottom, top)) / 2;
+    const dx = t.left + t.width / 2 - cx, dy = t.top + t.height / 2 - cy;
+    const el = document.createElement('img');
+    el.src = src.currentSrc || src.src;
+    el.style.cssText = `position:fixed;left:${cx - w / 2}px;top:${cy - h / 2}px;width:${w}px;height:${h}px;` +
+      'object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:4000;pointer-events:none;';
+    document.body.appendChild(el);
+    const anim = el.animate([
+      { transform: 'translate(0,0) scale(1)', opacity: 1 },
+      { transform: `translate(${dx * 0.5}px,${dy * 0.5 - 70}px) scale(.55)`, opacity: .95, offset: .55 },
+      { transform: `translate(${dx}px,${dy}px) scale(.1)`, opacity: .35 }
+    ], { duration: 750, easing: 'ease-in-out', fill: 'forwards' });
+    return new Promise(res => { anim.onfinish = anim.oncancel = () => { el.remove(); res(); }; });
+  }
+  function bounce() {
+    document.querySelectorAll('button[aria-label="Bag"]').forEach(b =>
+      b.animate && b.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.3)' }, { transform: 'scale(1)' }], { duration: 380, easing: 'ease-out' }));
+  }
+
+  function render() {
+    const count = totalQty();
+    let list = 0, saved = 0;
+    items.forEach(i => {
+      const old = Math.max(cents(i.oldPrice || i.price), cents(i.price));
+      list += old * i.qty;
+      saved += (old - cents(i.price)) * i.qty;
+    });
+    const pay = list - saved;
+
+    if (!pending) updateBadge();
+
+    // tabs
+    document.querySelectorAll('[data-tab]').forEach(t => {
+      const on = t.dataset.tab === tab;
+      t.className = 'mx-4 flex items-center justify-center gap-2 border-b-2 py-4 text-[19px] font-medium ' + (on ? 'border-neutral-400 text-[#111]' : 'border-transparent text-[#111]');
+      t.innerHTML = (t.dataset.tab === 'bag' ? 'Bag ' + pill(count) : 'Wishlist ' + pill(wish.length));
+    });
+
+    if (tab === 'wish') return renderWish();
+
+    if (!items.length) {
+      body.innerHTML = `
+        <div class="flex flex-col items-center gap-3 px-6 py-24 text-center text-neutral-500">
+          <i class="fa-solid fa-bag-shopping text-5xl text-neutral-300"></i>
+          <p class="text-lg">Your bag is empty.</p>
+          <button data-act="close" class="mt-2 h-12 w-full max-w-[320px] rounded-lg bg-[#222] text-[16px] font-semibold text-white hover:bg-black">Continue shopping</button>
+        </div>`;
+      return;
+    }
+
+    body.innerHTML = items.map((it, k) => {
+      const sizes = (it.sizes && it.sizes.length) ? it.sizes : ALL_SIZES;
+      const line = cents(it.price) * it.qty;
+      const sale = it.oldPrice > it.price;
+      return `
+      <div class="flex gap-4 border-b border-neutral-100 px-4 py-5" data-k="${k}">
+        <div class="w-[137px] shrink-0">
+          <a href="product_detail.html?id=${it.id}"><img src="${esc(it.image)}" alt="${esc(it.name)}" class="h-[183px] w-full bg-neutral-100 object-cover object-top"></a>
+          <button data-act="wish" class="mt-2 flex items-center gap-1.5 text-[14px] text-[#e53935] hover:underline"><i class="fa-regular fa-heart"></i> Move to wishlist</button>
+        </div>
+        <div class="relative flex min-w-0 flex-1 flex-col">
+          <button data-act="remove" aria-label="Remove item" class="absolute right-0 top-0 text-xl text-[#e53935]"><i class="fa-regular fa-trash-can"></i></button>
+          ${badge}
+          <a href="product_detail.html?id=${it.id}" class="pr-8 text-[18px] leading-snug text-neutral-800 hover:underline">${esc(it.name)}</a>
+          <div class="mt-3 flex gap-5">
+            <label class="text-[13px] text-neutral-600">Size:
+              <select data-act="size" class="mt-1 block h-10 w-[84px] rounded border border-neutral-300 bg-white px-2 text-[15px] text-[#111]">
+                ${sizes.map(s => `<option ${s === it.size ? 'selected' : ''}>${esc(s)}</option>`).join('')}
+              </select></label>
+            <label class="text-[13px] text-neutral-600">Quantity:
+              <select data-act="qty" class="mt-1 block h-10 w-[84px] rounded border border-neutral-300 bg-white px-2 text-[15px] text-[#111]">
+                ${Array.from({ length: MAX }, (_, n) => `<option ${n + 1 === it.qty ? 'selected' : ''}>${n + 1}</option>`).join('')}
+              </select></label>
+          </div>
+          <div class="mt-auto pt-3 text-right">
+            ${sale ? `<span class="mr-2 text-sm text-neutral-400 line-through">${money(cents(it.oldPrice) * it.qty)}</span>` : ''}
+            <span class="text-[20px] font-medium">${money(line)}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('') + `
+      <div class="h-2 bg-neutral-100"></div>
+      <div class="flex items-center justify-between border-b border-neutral-200 px-4 py-4 text-[22px] font-semibold"><span>Amount to pay</span><span>${money(pay)}</span></div>
+      <div class="flex flex-col gap-2 px-4 py-4 text-[17px]">
+        <div class="flex justify-between"><span>Total</span><span>${money(list)}</span></div>
+        <div class="flex justify-between"><span>Save</span><span>${saved ? money(saved) : '$0'}</span></div>
+      </div>
+      <div class="px-4 pb-8">
+        <button data-act="checkout" class="h-[52px] w-full rounded-lg bg-[#222] text-[19px] font-semibold text-white shadow-md hover:bg-black">Checkout</button>
+      </div>`;
+  }
+
+  function renderWish() {
+    if (!wish.length) {
+      body.innerHTML = `
+        <div class="flex flex-col items-center gap-3 px-6 py-24 text-center text-neutral-500">
+          <i class="fa-regular fa-heart text-5xl text-neutral-300"></i>
+          <p class="text-lg">Your wishlist is empty.</p>
+        </div>`;
+      return;
+    }
+    body.innerHTML = wish.map((it, k) => `
+      <div class="flex gap-4 border-b border-neutral-100 px-4 py-5" data-w="${k}">
+        <a href="product_detail.html?id=${it.id}" class="w-[110px] shrink-0"><img src="${esc(it.image)}" alt="${esc(it.name)}" class="h-[147px] w-full bg-neutral-100 object-cover object-top"></a>
+        <div class="relative flex min-w-0 flex-1 flex-col">
+          <button data-act="wremove" aria-label="Remove" class="absolute right-0 top-0 text-xl text-[#e53935]"><i class="fa-regular fa-trash-can"></i></button>
+          <a href="product_detail.html?id=${it.id}" class="pr-8 text-[17px] leading-snug text-neutral-800 hover:underline">${esc(it.name)}</a>
+          <p class="mt-1 text-[13px] text-neutral-500">Size: ${esc(it.size)}</p>
+          <p class="mt-1 text-[18px] font-medium">${money(cents(it.price))}</p>
+          <button data-act="wtobag" class="mt-auto h-11 w-full rounded-lg bg-[#222] text-[15px] font-semibold text-white hover:bg-black">Move to bag</button>
+        </div>
+      </div>`).join('');
+  }
+
+  const addToBag = item => {
+    const f = items.find(i => i.id === item.id && i.size === item.size);
+    if (f) f.qty = Math.min(MAX, f.qty + item.qty);
+    else items.push({ ...item, qty: Math.min(MAX, item.qty) });
+  };
+  function add(item, srcEl) {
+    addToBag(item); tab = 'bag'; save();
+    pending++; render();
+    fly(srcEl).then(() => { pending--; updateBadge(); bounce(); });
+  }
+
+  drawer.addEventListener('click', e => {
+    const t = e.target.closest('[data-tab]');
+    if (t) { tab = t.dataset.tab; return render(); }
+    const btn = e.target.closest('button[data-act]');
+    if (!btn) return;
+    const act = btn.dataset.act;
+    if (act === 'close') return close();
+    if (act === 'checkout') return;                       // link your checkout page here
+    const rowB = btn.closest('[data-k]'), rowW = btn.closest('[data-w]');
+    if (rowB) {
+      const k = +rowB.dataset.k, it = items[k];
+      if (act === 'remove') items.splice(k, 1);
+      if (act === 'wish') { items.splice(k, 1); if (!wish.some(w => w.id === it.id && w.size === it.size)) wish.push({ ...it, qty: 1 }); }
+    } else if (rowW) {
+      const k = +rowW.dataset.w, it = wish[k];
+      if (act === 'wremove') wish.splice(k, 1);
+      if (act === 'wtobag') { wish.splice(k, 1); addToBag({ ...it, qty: 1 }); tab = 'bag'; }
+    }
+    save(); render();
+  });
+
+  drawer.addEventListener('change', e => {
+    const sel = e.target.closest('select[data-act]');
+    const row = sel && sel.closest('[data-k]');
+    if (!row) return;
+    const k = +row.dataset.k, it = items[k];
+    if (sel.dataset.act === 'qty') it.qty = +sel.value;
+    if (sel.dataset.act === 'size') {
+      it.size = sel.value;
+      const j = items.findIndex((o, n) => n !== k && o.id === it.id && o.size === it.size);
+      if (j > -1) { items[j].qty = Math.min(MAX, items[j].qty + it.qty); items.splice(k, 1); }
+    }
+    save(); render();
+  });
+
+  $('#cartClose').addEventListener('click', close);
+  overlay.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  addEventListener('storage', e => { if (e.key === KEY || e.key === WKEY) { items = read(KEY); wish = read(WKEY); render(); } });
+  document.querySelectorAll('button[aria-label="Bag"]').forEach(b => b.addEventListener('click', () => open('bag')));
+
+  render();
+  window.Cart = { add, open, close, items: () => items.slice() };
+})();
+
+  </script>
+  <script>
+    const CDN = 'https://zand.sgp1.cdn.digitaloceanspaces.com/';
+    const B = CDN + 'catalog/banner/Ten11%3E2026%3EJuly/Collection/';
+    const $ = (s, r = document) => r.querySelector(s);
+    const money = n => '$' + n.toFixed(2);
+    const h = (id, html) => ($(id).innerHTML = html);
+    const pct = (p, o) => '-' + Math.round((1 - p / o) * 100) + '%';
+    const detailUrl = p => 'product_detail.html?id=' + p.id;
+
+    /* ---------- Navbar ---------- */
+    const menu = {
+      'New In': ['New Arrivals', 'Just Dropped', 'Trending Now', 'Limited Edition'],
+      'Clothing': ['T-Shirts', 'Shirts', 'Jackets', 'Pants', 'Hoodies'],
+      'Accessories': ['Bags', 'Hats', 'Belts', 'Jewelry', 'Sunglasses'],
+      'Shoes': ['Sneakers', 'Boots', 'Sandals', 'Formal'],
+      'Collections': ['Summer 2026', 'Essentials', 'Collaboration', 'Archive']
+    };
+    h('#navMenu', Object.entries(menu).map(([k, v]) => `
+  <li class="group relative">
+    <a href="#" class="flex cursor-pointer items-center gap-1.5 px-[18px] py-3.5 text-sm font-medium text-neutral-800 transition-colors group-hover:text-black">
+      ${k} <i class="fa-solid fa-chevron-down text-[11px] transition-transform group-hover:rotate-180"></i></a>
+    <div class="invisible absolute left-1/2 top-full z-[100] min-w-[200px] -translate-x-1/2 rounded-lg border border-neutral-100 bg-white py-2 opacity-0 shadow-[0_8px_24px_rgba(0,0,0,.1)] transition-all duration-200 group-hover:visible group-hover:opacity-100">
+      ${v.map(x => `<a href="#" class="block px-5 py-2.5 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-black">${x}</a>`).join('')}
+    </div>
+  </li>`).join(''));
+
+    /* ---------- Search dropdown (click the search icon) ---------- */
+    (function () {
+      const sw = $('#searchWrap');
+      const POPULAR = ['T-Shirt', 'Denim', 'Jeans', 'Tank', 'Graphic'];
+      const GROUP = { tops: 'tops', bestSeller: 'best seller', bottoms: 'bottoms' };
+      const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const norm = s => String(s).toLowerCase().replace(/[-_]/g, ' ');
+      const url = q => 'search.html?q=' + encodeURIComponent(q);
+
+      sw.insertAdjacentHTML('beforeend', `
+      <div id="searchDD" class="invisible fixed inset-x-3 top-[72px] z-[60] translate-y-1 rounded-xl border border-neutral-200 bg-white opacity-0 shadow-[0_16px_40px_rgba(0,0,0,.18)] transition duration-200 md:absolute md:inset-x-auto md:right-0 md:top-[calc(100%+12px)] md:w-[400px]">
+        <div class="p-3">
+          <div class="flex items-center gap-2 rounded-full border border-neutral-300 px-4 focus-within:border-[#111]">
+            <i class="fa-solid fa-magnifying-glass text-sm text-neutral-500"></i>
+            <input id="searchInput" type="text" autocomplete="off" placeholder="Search products..." class="h-11 min-w-0 flex-1 bg-transparent text-[15px] outline-none">
+            <button id="searchClear" type="button" aria-label="Clear" class="hidden text-neutral-400 hover:text-[#111]"><i class="fa-solid fa-circle-xmark"></i></button>
+          </div>
+        </div>
+        <div id="searchList" class="max-h-[60vh] overflow-y-auto pb-2"></div>
+      </div>`);
+
+      const dd = $('#searchDD'), si = $('#searchInput'), list = $('#searchList'), clear = $('#searchClear');
+      si.value = (new URLSearchParams(location.search).get('q') || '').trim();
+      let products = null, active = -1;
+
+      const load = () => products ? Promise.resolve(products)
+        : fetch('product.json').then(r => r.json()).then(d => (products = d.products)).catch(() => (products = []));
+
+      const find = q => {
+        const words = norm(q).split(/\s+/).filter(Boolean).map(w => (w.length > 3 ? w.replace(/s$/, '') : w));
+        if (!words.length || !products) return [];
+        return products.map(p => {
+          const name = norm(p.name), hay = name + ' ' + (GROUP[p.group] || '') + ' ' + norm(p.description || '');
+          return words.every(w => hay.includes(w)) ? { p, score: words.filter(w => name.includes(w)).length } : null;
+        }).filter(Boolean).sort((a, b) => b.score - a.score).map(x => x.p);
+      };
+
+      const chips = () => `
+        <p class="px-4 pb-2 pt-1 text-xs font-semibold uppercase tracking-wide text-neutral-500">Popular searches</p>
+        <div class="flex flex-wrap gap-2 px-4 pb-2">
+          ${POPULAR.map(k => `<a href="${url(k)}" data-row class="rounded-full border border-neutral-300 px-3.5 py-1.5 text-sm hover:border-[#111]">${k}</a>`).join('')}
+        </div>`;
+
+      function render() {
+        const q = si.value.trim();
+        clear.classList.toggle('hidden', !q);
+        active = -1;
+        if (!q) { list.innerHTML = chips(); return; }
+        const found = find(q);
+        if (!found.length) {
+          list.innerHTML = `<p class="px-4 py-3 text-sm text-neutral-600">No products found for “${esc(q)}”.</p>` + chips();
+          return;
+        }
+        list.innerHTML = found.slice(0, 6).map(p => `
+          <a href="product_detail.html?id=${p.id}" data-row class="flex items-center gap-3 px-4 py-2 hover:bg-neutral-100">
+            <img src="${esc(p.image)}" alt="" class="h-[58px] w-[44px] shrink-0 rounded bg-neutral-100 object-cover object-top">
+            <span class="min-w-0 flex-1">
+              <span class="line-clamp-2 block text-sm leading-snug text-neutral-800">${esc(p.name)}</span>
+              <span class="mt-0.5 block text-sm"><b class="text-[#e53935]">${money(p.price)}</b>${p.oldPrice > p.price ? ` <s class="text-neutral-400">${money(p.oldPrice)}</s>` : ''}</span>
+            </span>
+          </a>`).join('') + `
+          <a href="${url(q)}" data-row class="mx-3 mt-1 flex items-center justify-between rounded-lg bg-neutral-100 px-4 py-3 text-sm font-medium hover:bg-neutral-200">
+            <span>See all ${found.length} result${found.length > 1 ? 's' : ''} for “${esc(q)}”</span><i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>`;
+      }
+
+      const rows = () => [...list.querySelectorAll('[data-row]')];
+      const highlight = i => {
+        const r = rows(); if (!r.length) return;
+        active = (i + r.length) % r.length;
+        r.forEach((el, k) => el.classList.toggle('bg-neutral-100', k === active && !el.matches('a.rounded-full')));
+        r[active].scrollIntoView({ block: 'nearest' });
+      };
+
+      function open() {
+        dd.classList.remove('invisible', 'opacity-0', 'translate-y-1');
+        load().then(render);
+        si.focus(); si.select();
+      }
+      function close() { dd.classList.add('invisible', 'opacity-0', 'translate-y-1'); }
+      const isOpen = () => !dd.classList.contains('invisible');
+
+      $('#searchBtn').onclick = e => { e.stopPropagation(); isOpen() ? close() : open(); };
+      si.addEventListener('input', () => load().then(render));
+      clear.addEventListener('click', () => { si.value = ''; render(); si.focus(); });
+      si.addEventListener('keydown', e => {
+        if (e.key === 'ArrowDown') { e.preventDefault(); highlight(active + 1); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); highlight(active - 1); }
+        else if (e.key === 'Enter') {
+          const r = rows();
+          if (active > -1 && r[active]) location.href = r[active].href;
+          else if (si.value.trim()) location.href = url(si.value.trim());
+        } else if (e.key === 'Escape') close();
+      });
+      document.addEventListener('click', e => { if (!sw.contains(e.target)) close(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    })();
+
+
+    /* ---------- Sidebar menu (hamburger) – slides in from the left ---------- */
+    (function () {
+      const btn = document.querySelector('button[aria-label="Menu"]');
+      document.body.insertAdjacentHTML('beforeend', `
+      <div id="sideOverlay" class="pointer-events-none fixed inset-0 z-[2900] bg-black/50 opacity-0 transition-opacity duration-300"></div>
+      <aside id="sideBar" aria-label="Menu" aria-hidden="true"
+        class="fixed left-0 top-0 z-[2901] flex h-full w-[86%] max-w-[360px] -translate-x-full flex-col bg-white shadow-2xl transition-transform duration-300">
+        <div class="flex h-16 shrink-0 items-center justify-between border-b border-neutral-200 px-5">
+          <a href="index.html" class="flex items-center gap-1 text-[22px] font-extrabold tracking-[2px]">TEN<span class="font-light">•</span>ELEVEN</a>
+          <button id="sideClose" aria-label="Close menu" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-neutral-100"><i class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto">
+          <ul id="sideMenu" class="py-2">
+            ${Object.entries(menu).map(([k, v]) => `
+            <li class="border-b border-neutral-100">
+              <button data-acc class="flex w-full items-center justify-between px-5 py-4 text-left text-[16px] font-semibold">
+                ${k} <i class="fa-solid fa-chevron-down text-xs text-neutral-500 transition-transform duration-300"></i>
+              </button>
+              <div data-panel class="overflow-hidden bg-neutral-50 transition-[max-height] duration-300" style="max-height:0">
+                ${v.map(x => `<a href="#" class="block px-8 py-3 text-[15px] text-neutral-700 hover:bg-neutral-100 hover:text-black">${x}</a>`).join('')}
+              </div>
+            </li>`).join('')}
+          </ul>
+
+          <ul class="py-2 text-[15px]">
+            <li><a href="index.html" class="flex items-center gap-3 px-5 py-3 hover:bg-neutral-100"><i class="fa-solid fa-house w-5 text-center text-neutral-600"></i> Home</a></li>
+            <li><a href="search.html" class="flex items-center gap-3 px-5 py-3 hover:bg-neutral-100"><i class="fa-solid fa-magnifying-glass w-5 text-center text-neutral-600"></i> Search</a></li>
+            <li><button data-open="wish" class="flex w-full items-center gap-3 px-5 py-3 text-left hover:bg-neutral-100"><i class="fa-regular fa-heart w-5 text-center text-neutral-600"></i> Wishlist</button></li>
+            <li><button data-open="bag" class="flex w-full items-center gap-3 px-5 py-3 text-left hover:bg-neutral-100"><i class="fa-solid fa-bag-shopping w-5 text-center text-neutral-600"></i> My Bag</button></li>
+            <li><a href="#" class="flex items-center gap-3 px-5 py-3 hover:bg-neutral-100"><i class="fa-solid fa-location-dot w-5 text-center text-neutral-600"></i> Find a store</a></li>
+            <li><a href="#" class="flex items-center gap-3 px-5 py-3 hover:bg-neutral-100"><i class="fa-regular fa-comment-dots w-5 text-center text-neutral-600"></i> Help &amp; FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="shrink-0 border-t border-neutral-200 px-5 py-4">
+          <div class="flex items-center gap-5 text-xl text-neutral-700">
+            <a href="#" aria-label="Facebook" class="hover:text-[#0052cc]"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram" class="hover:text-[#0052cc]"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok" class="hover:text-[#0052cc]"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+          <p class="mt-3 text-xs text-neutral-500">Powered By TEN11 &copy; 2026</p>
+        </div>
+      </aside>`);
+
+      const side = $('#sideBar'), ov = $('#sideOverlay');
+      const open = () => {
+        side.classList.remove('-translate-x-full');
+        ov.classList.remove('pointer-events-none', 'opacity-0');
+        side.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+      const close = () => {
+        side.classList.add('-translate-x-full');
+        ov.classList.add('pointer-events-none', 'opacity-0');
+        side.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      btn.addEventListener('click', open);
+      $('#sideClose').addEventListener('click', close);
+      ov.addEventListener('click', close);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+      // accordion: one section open at a time
+      side.addEventListener('click', e => {
+        const acc = e.target.closest('[data-acc]');
+        if (acc) {
+          const panel = acc.nextElementSibling, willOpen = panel.style.maxHeight === '0px';
+          side.querySelectorAll('[data-panel]').forEach(p => (p.style.maxHeight = '0px'));
+          side.querySelectorAll('[data-acc] i').forEach(i => (i.style.transform = ''));
+          if (willOpen) { panel.style.maxHeight = panel.scrollHeight + 'px'; acc.querySelector('i').style.transform = 'rotate(180deg)'; }
+          return;
+        }
+        const o = e.target.closest('[data-open]');
+        if (o) { close(); window.Cart && Cart.open(o.dataset.open); }
+      });
+    })();
+
+    /* ---------- Generic slider (prev / next / dots / autoplay) ---------- */
+    function slider(root, { on, off, delay = 0 }) {
+      const track = $('[data-track]', root), dots = $('[data-dots]', root), n = track.children.length;
+      const base = 'cursor-pointer rounded-full transition-all duration-300 ';
+      let i = 0, t;
+      dots.innerHTML = Array.from({ length: n }, (_, k) => `<span data-i="${k}" class="${base}${k ? off : on}"></span>`).join('');
+      const go = k => {
+        i = (k + n) % n;
+        track.style.transform = `translateX(-${i * 100}%)`;
+        [...dots.children].forEach((d, j) => (d.className = base + (j === i ? on : off)));
+      };
+      root.addEventListener('click', e => {
+        const b = e.target.closest('[data-prev],[data-next],[data-i]');
+        if (!b) return;
+        b.hasAttribute('data-prev') ? go(i - 1) : b.hasAttribute('data-next') ? go(i + 1) : go(+b.dataset.i);
+      });
+      const start = () => delay && !t && (t = setInterval(() => go(i + 1), delay));
+      const stop = () => { clearInterval(t); t = null; };
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+      start();
+    }
+
+    /* ---------- Hero ---------- */
+    const heroes = [
+      [B + 'Hero%20banner/_Main_web_(2160x798).jpg', 'JUST LANDED', 'DISCOVER STYLES FOR EVERY MOOD', 'T&CS APPLY'],
+      [B + 'TEN11%20HELLO%20KITTY/HelloKitty_Main_WEB_TEN11%20(2160x798).jpg', 'NEW DENIM DROP', 'PREMIUM CUTS & COMFORT FITS', 'LIMITED STOCKS AVAILABLE'],
+      [CDN + 'catalog/banner/2026/ZANDO%20New%20Version/Hero%20Banner%20-%20New%20Arrivals/SEP/NewArrival_HeroBanner_ZANDO%20(1920%20X%20550).jpg', 'PREMIUM COLLECTION', 'ELEVATE YOUR EVERYDAY OUTLET', 'EXCLUSIVE RELEASE'],
+      ['https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop', 'ESSENTIALS 2026', 'MODERN STREETWEAR REDEFINED', 'NEW SEASON ARRIVALS']
+    ];
+    h('#hero [data-track]', heroes.map(([img, title, sub, terms], i) => `
+  <div class="group relative flex h-[420px] min-w-full items-center justify-center overflow-hidden md:h-[560px]">
+    <a href="#" class="absolute inset-0 z-[1]"><img src="${img}" alt="${title}" loading="${i ? 'lazy' : 'eager'}"
+      class="h-full w-full object-cover transition-transform duration-[800ms] group-hover:scale-[1.03]"></a>
+    <div class="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-black/25 via-black/55 via-60% to-black/75"></div>
+    <div class="relative z-[3] flex max-w-[850px] flex-col items-center p-5 text-center text-white">
+      <div class="mb-3 text-sm font-extrabold uppercase tracking-[4px] text-neutral-100 [text-shadow:0_2px_4px_rgba(0,0,0,.6)]">TEN &bull; ELEVEN</div>
+      <h1 class="mb-3.5 text-[38px] font-black uppercase italic leading-[1.05] tracking-[-1px] [text-shadow:0_4px_18px_rgba(0,0,0,.8)] md:text-[64px]">${title}</h1>
+      <div class="mb-2 flex items-center justify-center gap-3 text-[13px] font-bold uppercase tracking-wide [text-shadow:0_2px_8px_rgba(0,0,0,.7)] md:text-lg">
+        <span class="text-sm">&#10022;</span><span>${sub}</span><span class="text-sm">&#10022;</span></div>
+      <p class="mb-7 text-[11px] uppercase tracking-[1.5px] opacity-85">${terms}</p>
+      <a href="#" class="inline-block rounded bg-[#0052cc] px-[30px] py-3 text-[13px] font-extrabold uppercase tracking-[1.5px] text-white shadow-[0_6px_18px_rgba(0,82,204,.4)] transition hover:-translate-y-0.5 hover:bg-[#003d99] hover:shadow-[0_8px_22px_rgba(0,61,153,.6)] md:px-[42px] md:py-3.5 md:text-[15px]">SHOP NOW</a>
+    </div>
+  </div>`).join(''));
+    slider($('#hero'), { on: 'h-2.5 w-7 bg-white', off: 'h-2.5 w-2.5 bg-white/50', delay: 5000 });
+
+    /* ---------- Categories ---------- */
+    const cats = ['Tops', 'Bottoms', 'Outerwear', 'Accessories'];
+    const catImg = ['', '%20(2)', '%20(3)', '%20(4)'];
+    h('#categories', cats.map((c, i) => `
+  <a href="#" class="group flex flex-col items-center">
+    <div class="mb-3.5 aspect-square w-full overflow-hidden rounded-xl bg-neutral-200 shadow-[0_4px_12px_rgba(0,0,0,.05)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_10px_24px_rgba(0,0,0,.1)]">
+      <img src="${B}Category%20Slider/APRIL26-WEB%20Homepage_MEN_All${catImg[i]}.jpg" alt="${c}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]">
+    </div>
+    <span class="text-[15px] font-semibold uppercase tracking-[.5px] transition-colors group-hover:text-[#0052cc]">${c}</span>
+  </a>`).join(''));
+
+    /* ---------- Latest collections ---------- */
+    const latest = [
+      ['Ten11_PCB_main%20Banner_Web_Size(2160%20x%20798%20px).jpg', "Resort '26"],
+      ['OUTDOOR%20WEB%20Ten11_main%20Banner_Web_Size(2160%20x%20798%20px)-1.jpg', 'Urban Drop'],
+      ['SPRING%20FLISH%20WEB%20Ten11_main%20Banner_Web_Size(2160%20x%20798%20px).jpg', 'Summer Specials']
+    ];
+    h('#latest [data-track]', latest.map(([f, a]) => `
+  <div class="h-[380px] min-w-full overflow-hidden md:h-[520px]">
+    <a href="#" class="block h-full w-full"><img src="${B}Collection%20Hightlight/${f}" alt="${a}" loading="lazy" class="h-full w-full object-cover"></a>
+  </div>`).join(''));
+    slider($('#latest'), { on: 'h-2 w-6 bg-white', off: 'h-2 w-2 bg-white/50', delay: 6000 });
+
+    /* ---------- Shared product bits ---------- */
+    const swatches = (colors, size) => colors && colors.length ? `<div class="${size === 'sm' ? 'mt-2.5 justify-start gap-2' : 'mt-3.5 justify-center gap-2.5'} flex" data-swatches>
+  ${colors.map((c, i) => `<button data-on="${i === 0}" style="background:${c}" aria-label="${c}"
+    class="${size === 'sm' ? 'h-5 w-5 border-2 border-transparent data-[on=true]:border-[#111]' : 'h-4 w-4 border border-neutral-300'} shrink-0 rounded-full p-0 transition hover:scale-[1.15] data-[on=true]:shadow-[0_0_0_1px_#fff,0_0_0_2px_#111]"></button>`).join('')}</div>` : '';
+
+    const heart = cls => `<button data-fav data-on="false" aria-label="Add to favorites" class="${cls} data-[on=true]:text-[#e53935]"><i class="fa-regular fa-heart"></i></button>`;
+
+    /* Heart + swatch clicks must not follow the card link */
+    document.addEventListener('click', e => {
+      const fav = e.target.closest('[data-fav]');
+      if (fav) {
+        e.preventDefault(); e.stopPropagation();
+        const on = fav.dataset.on !== 'true';
+        fav.dataset.on = on;
+        fav.querySelector('i').className = on ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
+        return;
+      }
+      const c = e.target.closest('[data-swatches] button');
+      if (c) {
+        e.preventDefault(); e.stopPropagation();
+        [...c.parentElement.children].forEach(b => (b.dataset.on = b === c));
+      }
+    });
+
+    /* ---------- On-trend tops ---------- */
+    const topCard = p => `
+  <a href="${detailUrl(p)}" class="group block overflow-hidden rounded-[10px] bg-white transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_28px_rgba(0,0,0,.1)]">
+    <div class="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+      <img src="${p.image}" alt="${p.name}" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+      ${heart('absolute right-3 top-3 z-[5] flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-base text-neutral-800 transition hover:scale-110 hover:bg-white')}
+    </div>
+    <div class="px-3 pb-4 pt-3.5">
+      <h3 class="mb-2 line-clamp-2 min-h-[34px] text-[13px] font-medium leading-[1.35] text-neutral-800 md:min-h-[38px] md:text-sm">${p.name}</h3>
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-sm font-bold text-[#e53935] md:text-[15px]">${money(p.price)}</span>
+        ${p.oldPrice > p.price ? `<span class="text-xs font-semibold text-[#e53935]">${pct(p.price, p.oldPrice)}</span>` : ''}
+        <span class="text-[13px] text-neutral-400 line-through">${money(p.oldPrice)}</span>
+      </div>
+      ${swatches(p.colors, 'sm')}
+    </div>
+  </a>`;
+
+    function renderTops(tops) {
+      const slides = [tops.slice(0, 4), tops.slice(4, 8), tops.slice(8)].filter(s => s.length);
+      h('#onTrend [data-track]', slides.map(s => `
+  <div class="grid min-w-full grid-cols-2 gap-3 px-0.5 min-[769px]:gap-5 min-[769px]:grid-cols-3 min-[1101px]:grid-cols-4">${s.map(topCard).join('')}</div>`).join(''));
+      slider($('#onTrend'), { on: 'h-2 w-[22px] bg-[#111]', off: 'h-2 w-2 bg-[#ddd]' });
+    }
+
+    /* ---------- Feature cards ---------- */
+    const feats = [
+      ['OCTO26-CatFeed%20-Men-BestSellers-WEBHP.jpg', 'Best-Sellers'],
+      ['OCTO26-CatFeed%20-Men-GraphicTees-WEB%20HP.jpg', 'Graphic Tees'],
+      ['OCTO26-CatFeed%20-Men-BestSellers-WEBHP%20(1).jpg', 'CASUALS'],
+      ['OCTO26-CatFeed%20-Men-Officewear-WEB%20HP.jpg', 'OFFICE WARE']
+    ];
+    h('#features', feats.map(([f, t]) => `
+  <a href="#" class="group relative block h-[70vh] min-h-[360px] overflow-hidden bg-[#e9e9ec] after:pointer-events-none after:absolute after:inset-0 after:bg-gradient-to-b after:from-[rgba(60,70,100,0)] after:from-45% after:via-[rgba(60,70,100,.55)] after:via-75% after:to-[rgba(60,70,100,.9)] after:content-[''] md:h-[min(100vh,900px)] md:min-h-[480px]">
+    <img src="${B}Categ/${f}" alt="${t}" loading="lazy" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-[800ms] group-hover:scale-[1.04]">
+    <h3 class="absolute inset-x-0 bottom-6 z-[2] px-4 text-center text-[clamp(18px,6vw,32px)] font-bold uppercase leading-none text-white md:bottom-12 md:text-[clamp(32px,5.2vw,84px)] md:tracking-[-1px]">${t}</h3>
+  </a>`).join(''));
+
+    /* ---------- Best-seller style carousels ---------- */
+    function bsSection(mount, title, items) {
+      const el = $(mount);
+      const per = () => (innerWidth <= 768 ? 2 : innerWidth <= 1100 ? 3 : 4);
+      const pages = () => Math.ceil(items.length / per());
+      const arrow = 'absolute top-[36%] z-10 h-10 w-10 -translate-y-1/2 rounded-full bg-[rgba(249,247,247,.55)] text-[15px] text-black transition hover:bg-black/85 hover:text-white disabled:cursor-default disabled:bg-black/35 disabled:opacity-35 disabled:hover:text-black md:h-[62px] md:w-[62px] md:text-xl';
+      el.innerHTML = `
+  <section class="mx-auto mb-[70px] max-w-[1400px] px-4">
+    <div class="mb-5 flex items-center justify-between">
+      <h2 class="text-[22px] font-extrabold md:text-[28px]">${title}</h2>
+      <a href="#" class="text-[15px] font-medium underline underline-offset-[3px] hover:text-[#0052cc]">Shop Now</a>
+    </div>
+    <div class="relative overflow-hidden">
+      <button data-p class="${arrow} left-2 md:left-[13px]" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+      <div data-t class="flex gap-2.5 transition-transform duration-[550ms] ease-[cubic-bezier(.25,1,.5,1)] will-change-transform">
+        ${items.map(p => `<div class="min-w-0 shrink-0 grow-0 basis-[calc((100%-10px)/2)] bg-white min-[769px]:basis-[calc((100%-20px)/3)] min-[1101px]:basis-[calc((100%-30px)/4)]">
+            <a href="${detailUrl(p)}" class="group block aspect-[3/4] overflow-hidden bg-[#f3f3f3]"><img src="${p.image}" alt="${p.name}" loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"></a>
+            <div class="px-3.5 pt-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <a href="${detailUrl(p)}" class="line-clamp-1 text-sm leading-[1.3] hover:underline md:text-base">${p.name}</a>
+                ${heart('shrink-0 p-0 text-[22px] leading-none text-[#111]')}
+              </div>
+              <div class="mt-0.5 flex items-center gap-1.5 text-sm md:text-base">
+                <span class="font-semibold text-[#d32030]">${money(p.price)}</span>
+                ${p.oldPrice > p.price ? `<span class="text-neutral-600">${pct(p.price, p.oldPrice)}</span>
+                <span class="text-neutral-600 line-through">${money(p.oldPrice)}</span>` : ''}
+              </div>
+              ${swatches(p.colors, 'lg')}
+            </div></div>`).join('')}
+      </div>
+      <button data-n class="${arrow} right-2 md:right-[13px]" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div data-d class="mt-[18px] flex justify-center gap-3"></div>
+  </section>`;
+      const track = $('[data-t]', el), prev = $('[data-p]', el), next = $('[data-n]', el), dots = $('[data-d]', el);
+      let page = 0;
+      function render() {
+        const pv = per(), total = pages();
+        page = Math.min(page, total - 1);
+        const start = Math.max(Math.min(page * pv, items.length - pv), 0);
+        track.style.transform = `translateX(-${start * (track.children[0].offsetWidth + 10)}px)`;
+        prev.disabled = page === 0;
+        next.disabled = page === total - 1;
+        dots.innerHTML = Array.from({ length: total }, (_, i) =>
+          `<button data-i="${i}" aria-label="Page ${i + 1}" class="h-2 w-2 rounded-full ${i === page ? 'bg-[#f26522]' : 'bg-[#ccc]'}"></button>`).join('');
+      }
+      prev.onclick = () => { page = Math.max(page - 1, 0); render(); };
+      next.onclick = () => { page = Math.min(page + 1, pages() - 1); render(); };
+      dots.onclick = e => { const b = e.target.closest('[data-i]'); if (b) { page = +b.dataset.i; render(); } };
+      addEventListener('resize', render);
+      addEventListener('load', render);
+      render();
+    }
+
+    /* ---------- Load products from product.json ---------- */
+    fetch('product.json')
+      .then(r => r.json())
+      .then(({ products }) => {
+        const by = g => products.filter(p => p.group === g);
+        renderTops(by('tops'));
+        bsSection('#bs1', 'Best Seller Under $11 😜✨', by('bestSeller'));
+        bsSection('#bs2', 'On-Trend Bottoms ❤️‍🔥', by('bottoms'));
+      })
+      .catch(err => {
+        console.error('Could not load product.json. Open the site through a local server (e.g. "npx serve"), not file://', err);
+      });
+
+    /* ---------- More collections ---------- */
+    const more = [
+      ['SWAGGER-IN-Men-Web.jpg', 'Swagger Syndrome<br>Collection', 'Swagger Syndrome Collection'],
+      ['ARENA%20STREET-Men-Web.jpg', 'Arena Street<br>Collection', 'Arena Street Collection'],
+      ['CLOCK-IN-Men-Web.jpg', 'Pride<br>Collection', 'Pride Collection']
+    ];
+    h('#more', more.map(([f, t, a]) => `
+  <a href="#" class="group relative block aspect-[4/5] overflow-hidden bg-neutral-200 after:pointer-events-none after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:from-[62%] after:via-black/55 after:via-[85%] after:to-black/80 after:content-[''] md:aspect-[3/4]">
+    <img src="${B}Collection%20slider/${f}" alt="${a}" loading="lazy" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]">
+    <h3 class="absolute inset-x-0 bottom-[34px] z-[2] px-4 text-center text-[clamp(20px,2.1vw,32px)] font-medium uppercase leading-[1.1] text-white [text-shadow:0_2px_10px_rgba(0,0,0,.35)]">${t}</h3>
+  </a>`).join(''));
+
+    /* ---------- #TEN11LOOKS ---------- */
+    const looks = [['Men%201.jpg', '@sen_bunroth'], ['Men%203.jpg', '@_xhing.xhing_'], ['%20Men%202.jpg', '@lextro.t19']];
+    h('#looks', looks.map(([f, u]) => `
+  <a href="#" class="group relative block aspect-[3/4] overflow-hidden bg-neutral-200">
+    <img src="${B}TEN11%20LOOK/${f}" alt="${u}" loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-[600ms] group-hover:scale-[1.04]">
+    <span class="absolute bottom-3 right-3 z-[2] rounded-md bg-white/80 px-3.5 py-[7px] text-[13px] leading-none text-neutral-600 backdrop-blur-sm md:bottom-4 md:right-5 md:text-[15px]">${u}</span>
+  </a>`).join(''));
+
+    /* ---------- Footer links ---------- */
+    const flink = ([icon, text]) => `<li><a href="#" class="group flex items-center gap-3.5 text-[17px] transition-colors hover:text-[#0052cc]"><i class="${icon} w-[22px] text-center text-xl text-neutral-700 transition-colors group-hover:text-[#0052cc]"></i> ${text}</a></li>`;
+    h('#follow', [['fa-brands fa-facebook', 'Facebook'], ['fa-brands fa-instagram', 'Instagram'], ['fa-brands fa-tiktok', 'TikTok']].map(flink).join(''));
+    h('#service', [
+      ['fa-solid fa-headset', 'Online exchange policy'], ['fa-solid fa-shield-halved', 'Privacy Policy'],
+      ['fa-solid fa-circle-info', 'Online Exchange Policy'], ['fa-regular fa-comment-dots', 'FAQs'], ['fa-solid fa-location-dot', 'Find a store']
+    ].map(flink).join(''));
+
+    /* ---------- Voucher copy ---------- */
+    document.querySelectorAll('[data-code]').forEach(btn => btn.addEventListener('click', () => {
+      const label = btn.textContent;
+      const done = () => { btn.textContent = 'Copied!'; setTimeout(() => (btn.textContent = label), 1500); };
+      navigator.clipboard ? navigator.clipboard.writeText(btn.dataset.code).then(done, done) : done();
+    }));
+  </script>
+</body>
+
+</html>

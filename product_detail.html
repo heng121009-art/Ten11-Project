@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | TEN11</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    [data-size].selected { background: #111 !important; color: #fff !important; border-color: #111 !important; }
+    .acc-body { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .acc-body.open { max-height: 300px; }
+    .acc-chevron { transition: transform .25s ease; }
+    .acc-chevron.rotated { transform: rotate(180deg); }
+  </style>
+</head>
+
+<body class="overflow-x-hidden bg-white font-sans text-[#111]">
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-[1000] border-b border-neutral-200 bg-white">
+    <div class="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6">
+      <div class="flex flex-1 items-center">
+        <button class="group flex flex-col gap-[5px] p-2" aria-label="Menu">
+          <span class="block h-0.5 w-[22px] bg-[#111] group-hover:bg-neutral-500"></span>
+          <span class="block h-0.5 w-[22px] bg-[#111] group-hover:bg-neutral-500"></span>
+          <span class="block h-0.5 w-[22px] bg-[#111] group-hover:bg-neutral-500"></span>
+        </button>
+      </div>
+      <div class="flex flex-1 justify-center">
+        <a href="index.html" class="flex items-center gap-1 text-[26px] font-extrabold tracking-[2px] text-[#111]">TEN<span
+            class="font-light">•</span>ELEVEN</a>
+      </div>
+      <div class="flex flex-1 items-center justify-end gap-1.5">
+        <div id="searchWrap" class="group relative flex items-center">
+          <button id="searchBtn" aria-label="Search"
+            class="flex h-[42px] w-[42px] items-center justify-center rounded-full text-lg hover:bg-neutral-100"><i
+              class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <button aria-label="Notifications"
+          class="relative flex h-[42px] w-[42px] items-center justify-center rounded-full text-lg hover:bg-neutral-100">
+          <i class="fa-regular fa-bell"></i>
+          <span
+            class="absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#e53935] text-[10px] font-semibold text-white">3</span>
+        </button>
+        <button aria-label="Profile"
+          class="flex h-[42px] w-[42px] items-center justify-center rounded-full text-lg hover:bg-neutral-100"><i
+            class="fa-regular fa-user"></i></button>
+        <button aria-label="Bag"
+          class="relative flex h-[42px] w-[42px] items-center justify-center rounded-full text-lg hover:bg-neutral-100">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span
+            class="absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#e53935] text-[10px] font-semibold text-white" id="bagCount">0</span>
+        </button>
+      </div>
+    </div>
+    <div class="hidden border-t border-neutral-100 bg-white md:block">
+      <ul id="navMenu" class="mx-auto flex max-w-[1400px] justify-center gap-2 px-6"></ul>
+    </div>
+  </nav>
+
+  <!-- PRODUCT -->
+  <main id="app">
+    <div class="p-20 text-center text-neutral-500">Loading…</div>
+  </main>
+
+  <hr>
+
+  <!-- FOOTER -->
+  <footer class="mt-10 bg-white pb-7 pt-11 sm:pt-[70px]">
+    <div class="mx-auto max-w-[1400px] px-4">
+      <div
+        class="grid grid-cols-1 gap-[34px] min-[601px]:grid-cols-2 min-[601px]:gap-x-8 min-[601px]:gap-y-10 min-[1101px]:grid-cols-4">
+
+        <div>
+          <h4 class="mb-[18px] text-[19px] font-semibold sm:mb-[26px]">Download App</h4>
+          <div class="flex items-center gap-3.5">
+            <div class="h-[100px] w-[100px] shrink-0 bg-white"><img class="block h-full w-full object-contain"
+                src="https://storage4.me-qr.com/qr/417040299.png" alt="Scan to download the app"></div>
+            <div class="flex flex-col gap-1.5">
+              <a href="#" aria-label="Get it on Google Play"
+                class="flex h-[46px] w-[150px] items-center gap-2 rounded-lg border border-neutral-600 bg-black px-2.5 text-white transition hover:opacity-85">
+                <i class="fa-brands fa-google-play text-2xl"></i>
+                <span><small class="block text-[8px] uppercase leading-[1.1] tracking-[.5px]">Get it on</small><strong
+                    class="block text-[17px] font-medium leading-[1.1]">Google Play</strong></span>
+              </a>
+              <a href="#" aria-label="Download on the App Store"
+                class="flex h-[46px] w-[150px] items-center gap-2 rounded-lg border border-neutral-600 bg-black px-2.5 text-white transition hover:opacity-85">
+                <i class="fa-brands fa-apple text-2xl"></i>
+                <span><small class="block text-[8px] uppercase leading-[1.1] tracking-[.5px]">Download on
+                    the</small><strong class="block text-[17px] font-medium leading-[1.1]">App Store</strong></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="mb-[18px] text-[19px] font-semibold sm:mb-[26px]">Follow Us</h4>
+          <ul id="follow" class="flex flex-col gap-3.5"></ul>
+        </div>
+
+        <div>
+          <h4 class="mb-[18px] text-[19px] font-semibold sm:mb-[26px]">Customer Service</h4>
+          <ul id="service" class="flex flex-col gap-3.5"></ul>
+        </div>
+
+        <div>
+          <h4 class="mb-[18px] text-[19px] font-semibold sm:mb-[26px]">We Accept</h4>
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-2.5 text-sm font-extrabold text-white">
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center whitespace-nowrap rounded bg-[#0e5a8a] px-2 text-[17px] tracking-wide text-[#5fd0e6]">ABA
+              PAY</span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center whitespace-nowrap rounded bg-[#1a3f9c] px-2 text-xl italic">VISA</span>
+            <span class="inline-flex h-10 min-w-[62px] items-center justify-center rounded bg-black px-2"><span
+                class="h-[22px] w-[22px] rounded-full bg-[#eb001b]"></span><span
+                class="-ml-2 h-[22px] w-[22px] rounded-full bg-[#f79e1b] opacity-95"></span></span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center whitespace-nowrap rounded bg-gradient-to-r from-[#d71e2b] via-[#0c4f8f] via-[55%] to-[#0b7a75] px-2 text-xs italic">UnionPay</span>
+            <span
+              class="inline-flex h-10 min-w-[50px] items-center justify-center whitespace-nowrap rounded bg-white px-2 text-xl tracking-wide text-[#1a3f9c]">JCB</span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center whitespace-nowrap rounded bg-[#8ec63f] px-2 text-[11px] italic">Wing
+              Bank</span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center gap-1.5 whitespace-nowrap rounded border border-neutral-100 bg-white px-2 text-[15px] font-normal text-neutral-700"><i
+                class="fa-solid fa-building-columns text-xl text-neutral-500"></i> Bank Transfer</span>
+            <span
+              class="inline-flex h-10 min-w-[62px] items-center justify-center gap-1.5 whitespace-nowrap rounded border border-neutral-100 bg-white px-2 text-[15px] font-normal text-neutral-700"><i
+                class="fa-solid fa-money-bill-wave text-xl text-neutral-500"></i> Cash on Delivery</span>
+          </div>
+        </div>
+      </div>
+      <p class="mt-14 text-center text-[17px]">Powered By TEN11 &copy; 2026</p>
+    </div>
+  </footer>
+
+  <script>
+/* TEN11 shopping bag + wishlist drawer (shared logic, inlined in each page) */
+(function () {
+  const KEY = 'ten11_cart', WKEY = 'ten11_wish', MAX = 10;
+  const ALL_SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  const cents = n => Math.round(n * 100);
+  const money = c => '$' + (c / 100).toFixed(2);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const read = k => { try { const v = JSON.parse(localStorage.getItem(k)); return Array.isArray(v) ? v : []; } catch (e) { return []; } };
+  const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } };
+
+  let items = read(KEY), wish = read(WKEY), tab = 'bag';
+  const save = () => { write(KEY, items); write(WKEY, wish); };
+
+  document.body.insertAdjacentHTML('beforeend', `
+  <div id="cartOverlay" class="pointer-events-none fixed inset-0 z-[3000] bg-black/50 opacity-0 transition-opacity duration-300"></div>
+  <aside id="cartDrawer" aria-label="Shopping bag" aria-hidden="true"
+    class="fixed right-0 top-0 z-[3001] flex h-full w-full max-w-[560px] translate-x-full flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300">
+    <div class="sticky top-0 z-10 flex shrink-0 items-center bg-white">
+      <div class="grid flex-1 grid-cols-2">
+        <button data-tab="bag" class="mx-4 flex items-center justify-center gap-2 border-b-2 py-4 text-[19px] font-medium"></button>
+        <button data-tab="wish" class="mx-4 flex items-center justify-center gap-2 border-b-2 py-4 text-[19px] font-medium"></button>
+      </div>
+      <button id="cartClose" aria-label="Close" class="mr-3 flex h-10 w-10 items-center justify-center rounded-full hover:bg-neutral-100"><i class="fa-solid fa-xmark text-xl"></i></button>
+    </div>
+    <div id="cartBody" class="flex-1"></div>
+  </aside>`);
+
+  const $ = s => document.querySelector(s);
+  const overlay = $('#cartOverlay'), drawer = $('#cartDrawer'), body = $('#cartBody');
+
+  function open(t) {
+    if (t) tab = t;
+    render();
+    drawer.classList.remove('translate-x-full');
+    overlay.classList.remove('pointer-events-none', 'opacity-0');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    drawer.classList.add('translate-x-full');
+    overlay.classList.add('pointer-events-none', 'opacity-0');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  const pill = n => `<span class="inline-flex h-7 min-w-[28px] items-center justify-center rounded-full bg-neutral-100 px-2 text-[15px] font-normal text-neutral-600">${n}</span>`;
+  const badge = `<span class="mb-1.5 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#1f2937] px-2.5 py-1 text-xs font-semibold text-white"><i class="fa-solid fa-sun text-[#ffd54f]"></i> New In</span>`;
+
+  const totalQty = () => items.reduce((s, i) => s + i.qty, 0);
+  let pending = 0;                       // adds still flying to the bag icon
+  function updateBadge() {
+    const n = totalQty();
+    document.querySelectorAll('button[aria-label="Bag"] span').forEach(b => {
+      b.textContent = n; b.style.display = n ? '' : 'none';
+    });
+  }
+
+  /* Fly a copy of the product photo to the bag icon in the navbar */
+  function fly(src) {
+    const bag = document.querySelector('button[aria-label="Bag"]');
+    if (!src || !bag || !src.getBoundingClientRect || !src.animate) return Promise.resolve();
+    const a = src.getBoundingClientRect(), t = bag.getBoundingClientRect();
+    const w = 110, h = 147;
+    const top = Math.max(a.top, 0), bottom = Math.min(a.bottom, innerHeight);
+    const cx = Math.min(Math.max(a.left + a.width / 2, 0), innerWidth);
+    const cy = (top + Math.max(bottom, top)) / 2;
+    const dx = t.left + t.width / 2 - cx, dy = t.top + t.height / 2 - cy;
+    const el = document.createElement('img');
+    el.src = src.currentSrc || src.src;
+    el.style.cssText = `position:fixed;left:${cx - w / 2}px;top:${cy - h / 2}px;width:${w}px;height:${h}px;` +
+      'object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:4000;pointer-events:none;';
+    document.body.appendChild(el);
+    const anim = el.animate([
+      { transform: 'translate(0,0) scale(1)', opacity: 1 },
+      { transform: `translate(${dx * 0.5}px,${dy * 0.5 - 70}px) scale(.55)`, opacity: .95, offset: .55 },
+      { transform: `translate(${dx}px,${dy}px) scale(.1)`, opacity: .35 }
+    ], { duration: 750, easing: 'ease-in-out', fill: 'forwards' });
+    return new Promise(res => { anim.onfinish = anim.oncancel = () => { el.remove(); res(); }; });
+  }
+  function bounce() {
+    document.querySelectorAll('button[aria-label="Bag"]').forEach(b =>
+      b.animate && b.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.3)' }, { transform: 'scale(1)' }], { duration: 380, easing: 'ease-out' }));
+  }
+
+  function render() {
+    const count = totalQty();
+    let list = 0, saved = 0;
+    items.forEach(i => {
+      const old = Math.max(cents(i.oldPrice || i.price), cents(i.price));
+      list += old * i.qty;
+      saved += (old - cents(i.price)) * i.qty;
+    });
+    const pay = list - saved;
+
+    if (!pending) updateBadge();
+
+    // tabs
+    document.querySelectorAll('[data-tab]').forEach(t => {
+      const on = t.dataset.tab === tab;
+      t.className = 'mx-4 flex items-center justify-center gap-2 border-b-2 py-4 text-[19px] font-medium ' + (on ? 'border-neutral-400 text-[#111]' : 'border-transparent text-[#111]');
+      t.innerHTML = (t.dataset.tab === 'bag' ? 'Bag ' + pill(count) : 'Wishlist ' + pill(wish.length));
+    });
+
+    if (tab === 'wish') return renderWish();
+
+    if (!items.length) {
+      body.innerHTML = `
+        <div class="flex flex-col items-center gap-3 px-6 py-24 text-center text-neutral-500">
+          <i class="fa-solid fa-bag-shopping text-5xl text-neutral-300"></i>
+          <p class="text-lg">Your bag is empty.</p>
+          <button data-act="close" class="mt-2 h-12 w-full max-w-[320px] rounded-lg bg-[#222] text-[16px] font-semibold text-white hover:bg-black">Continue shopping</button>
+        </div>`;
+      return;
+    }
+
+    body.innerHTML = items.map((it, k) => {
+      const sizes = (it.sizes && it.sizes.length) ? it.sizes : ALL_SIZES;
+      const line = cents(it.price) * it.qty;
+      const sale = it.oldPrice > it.price;
+      return `
+      <div class="flex gap-4 border-b border-neutral-100 px-4 py-5" data-k="${k}">
+        <div class="w-[137px] shrink-0">
+          <a href="product_detail.html?id=${it.id}"><img src="${esc(it.image)}" alt="${esc(it.name)}" class="h-[183px] w-full bg-neutral-100 object-cover object-top"></a>
+          <button data-act="wish" class="mt-2 flex items-center gap-1.5 text-[14px] text-[#e53935] hover:underline"><i class="fa-regular fa-heart"></i> Move to wishlist</button>
+        </div>
+        <div class="relative flex min-w-0 flex-1 flex-col">
+          <button data-act="remove" aria-label="Remove item" class="absolute right-0 top-0 text-xl text-[#e53935]"><i class="fa-regular fa-trash-can"></i></button>
+          ${badge}
+          <a href="product_detail.html?id=${it.id}" class="pr-8 text-[18px] leading-snug text-neutral-800 hover:underline">${esc(it.name)}</a>
+          <div class="mt-3 flex gap-5">
+            <label class="text-[13px] text-neutral-600">Size:
+              <select data-act="size" class="mt-1 block h-10 w-[84px] rounded border border-neutral-300 bg-white px-2 text-[15px] text-[#111]">
+                ${sizes.map(s => `<option ${s === it.size ? 'selected' : ''}>${esc(s)}</option>`).join('')}
+              </select></label>
+            <label class="text-[13px] text-neutral-600">Quantity:
+              <select data-act="qty" class="mt-1 block h-10 w-[84px] rounded border border-neutral-300 bg-white px-2 text-[15px] text-[#111]">
+                ${Array.from({ length: MAX }, (_, n) => `<option ${n + 1 === it.qty ? 'selected' : ''}>${n + 1}</option>`).join('')}
+              </select></label>
+          </div>
+          <div class="mt-auto pt-3 text-right">
+            ${sale ? `<span class="mr-2 text-sm text-neutral-400 line-through">${money(cents(it.oldPrice) * it.qty)}</span>` : ''}
+            <span class="text-[20px] font-medium">${money(line)}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('') + `
+      <div class="h-2 bg-neutral-100"></div>
+      <div class="flex items-center justify-between border-b border-neutral-200 px-4 py-4 text-[22px] font-semibold"><span>Amount to pay</span><span>${money(pay)}</span></div>
+      <div class="flex flex-col gap-2 px-4 py-4 text-[17px]">
+        <div class="flex justify-between"><span>Total</span><span>${money(list)}</span></div>
+        <div class="flex justify-between"><span>Save</span><span>${saved ? money(saved) : '$0'}</span></div>
+      </div>
+      <div class="px-4 pb-8">
+        <button data-act="checkout" class="h-[52px] w-full rounded-lg bg-[#222] text-[19px] font-semibold text-white shadow-md hover:bg-black">Checkout</button>
+      </div>`;
+  }
+
+  function renderWish() {
+    if (!wish.length) {
+      body.innerHTML = `
+        <div class="flex flex-col items-center gap-3 px-6 py-24 text-center text-neutral-500">
+          <i class="fa-regular fa-heart text-5xl text-neutral-300"></i>
+          <p class="text-lg">Your wishlist is empty.</p>
+        </div>`;
+      return;
+    }
+    body.innerHTML = wish.map((it, k) => `
+      <div class="flex gap-4 border-b border-neutral-100 px-4 py-5" data-w="${k}">
+        <a href="product_detail.html?id=${it.id}" class="w-[110px] shrink-0"><img src="${esc(it.image)}" alt="${esc(it.name)}" class="h-[147px] w-full bg-neutral-100 object-cover object-top"></a>
+        <div class="relative flex min-w-0 flex-1 flex-col">
+          <button data-act="wremove" aria-label="Remove" class="absolute right-0 top-0 text-xl text-[#e53935]"><i class="fa-regular fa-trash-can"></i></button>
+          <a href="product_detail.html?id=${it.id}" class="pr-8 text-[17px] leading-snug text-neutral-800 hover:underline">${esc(it.name)}</a>
+          <p class="mt-1 text-[13px] text-neutral-500">Size: ${esc(it.size)}</p>
+          <p class="mt-1 text-[18px] font-medium">${money(cents(it.price))}</p>
+          <button data-act="wtobag" class="mt-auto h-11 w-full rounded-lg bg-[#222] text-[15px] font-semibold text-white hover:bg-black">Move to bag</button>
+        </div>
+      </div>`).join('');
+  }
+
+  const addToBag = item => {
+    const f = items.find(i => i.id === item.id && i.size === item.size);
+    if (f) f.qty = Math.min(MAX, f.qty + item.qty);
+    else items.push({ ...item, qty: Math.min(MAX, item.qty) });
+  };
+  function add(item, srcEl) {
+    addToBag(item); tab = 'bag'; save();
+    pending++; render();
+    fly(srcEl).then(() => { pending--; updateBadge(); bounce(); });
+  }
+
+  drawer.addEventListener('click', e => {
+    const t = e.target.closest('[data-tab]');
+    if (t) { tab = t.dataset.tab; return render(); }
+    const btn = e.target.closest('button[data-act]');
+    if (!btn) return;
+    const act = btn.dataset.act;
+    if (act === 'close') return close();
+    if (act === 'checkout') return;                       // link your checkout page here
+    const rowB = btn.closest('[data-k]'), rowW = btn.closest('[data-w]');
+    if (rowB) {
+      const k = +rowB.dataset.k, it = items[k];
+      if (act === 'remove') items.splice(k, 1);
+      if (act === 'wish') { items.splice(k, 1); if (!wish.some(w => w.id === it.id && w.size === it.size)) wish.push({ ...it, qty: 1 }); }
+    } else if (rowW) {
+      const k = +rowW.dataset.w, it = wish[k];
+      if (act === 'wremove') wish.splice(k, 1);
+      if (act === 'wtobag') { wish.splice(k, 1); addToBag({ ...it, qty: 1 }); tab = 'bag'; }
+    }
+    save(); render();
+  });
+
+  drawer.addEventListener('change', e => {
+    const sel = e.target.closest('select[data-act]');
+    const row = sel && sel.closest('[data-k]');
+    if (!row) return;
+    const k = +row.dataset.k, it = items[k];
+    if (sel.dataset.act === 'qty') it.qty = +sel.value;
+    if (sel.dataset.act === 'size') {
+      it.size = sel.value;
+      const j = items.findIndex((o, n) => n !== k && o.id === it.id && o.size === it.size);
+      if (j > -1) { items[j].qty = Math.min(MAX, items[j].qty + it.qty); items.splice(k, 1); }
+    }
+    save(); render();
+  });
+
+  $('#cartClose').addEventListener('click', close);
+  overlay.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  addEventListener('storage', e => { if (e.key === KEY || e.key === WKEY) { items = read(KEY); wish = read(WKEY); render(); } });
+  document.querySelectorAll('button[aria-label="Bag"]').forEach(b => b.addEventListener('click', () => open('bag')));
+
+  render();
+  window.Cart = { add, open, close, items: () => items.slice() };
+})();
+
+  </script>
+  <script>
+    const $ = (s, r = document) => r.querySelector(s);
+    const money = n => '$' + n.toFixed(2);
+    const pct = (p, o) => '-' + Math.round((1 - p / o) * 100) + '%';
+
+    /* ---------- Navbar dropdown, search, footer links ---------- */
+    const h = (sel, html) => ($(sel).innerHTML = html);
+    const menu = {
+      'New In': ['New Arrivals', 'Just Dropped', 'Trending Now', 'Limited Edition'],
+      'Clothing': ['T-Shirts', 'Shirts', 'Jackets', 'Pants', 'Hoodies'],
+      'Accessories': ['Bags', 'Hats', 'Belts', 'Jewelry', 'Sunglasses'],
+      'Shoes': ['Sneakers', 'Boots', 'Sandals', 'Formal'],
+      'Collections': ['Summer 2026', 'Essentials', 'Collaboration', 'Archive']
+    };
+    h('#navMenu', Object.entries(menu).map(([k, v]) => `
+  <li class="group relative">
+    <a href="#" class="flex cursor-pointer items-center gap-1.5 px-[18px] py-3.5 text-sm font-medium text-neutral-800 transition-colors group-hover:text-black">
+      ${k} <i class="fa-solid fa-chevron-down text-[11px] transition-transform group-hover:rotate-180"></i></a>
+    <div class="invisible absolute left-1/2 top-full z-[100] min-w-[200px] -translate-x-1/2 rounded-lg border border-neutral-100 bg-white py-2 opacity-0 shadow-[0_8px_24px_rgba(0,0,0,.1)] transition-all duration-200 group-hover:visible group-hover:opacity-100">
+      ${v.map(x => `<a href="#" class="block px-5 py-2.5 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-black">${x}</a>`).join('')}
+    </div>
+  </li>`).join(''));
+
+    /* ---------- Search dropdown (click the search icon) ---------- */
+    (function () {
+      const sw = $('#searchWrap');
+      const POPULAR = ['T-Shirt', 'Denim', 'Jeans', 'Tank', 'Graphic'];
+      const GROUP = { tops: 'tops', bestSeller: 'best seller', bottoms: 'bottoms' };
+      const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const norm = s => String(s).toLowerCase().replace(/[-_]/g, ' ');
+      const url = q => 'search.html?q=' + encodeURIComponent(q);
+
+      sw.insertAdjacentHTML('beforeend', `
+      <div id="searchDD" class="invisible fixed inset-x-3 top-[72px] z-[60] translate-y-1 rounded-xl border border-neutral-200 bg-white opacity-0 shadow-[0_16px_40px_rgba(0,0,0,.18)] transition duration-200 md:absolute md:inset-x-auto md:right-0 md:top-[calc(100%+12px)] md:w-[400px]">
+        <div class="p-3">
+          <div class="flex items-center gap-2 rounded-full border border-neutral-300 px-4 focus-within:border-[#111]">
+            <i class="fa-solid fa-magnifying-glass text-sm text-neutral-500"></i>
+            <input id="searchInput" type="text" autocomplete="off" placeholder="Search products..." class="h-11 min-w-0 flex-1 bg-transparent text-[15px] outline-none">
+            <button id="searchClear" type="button" aria-label="Clear" class="hidden text-neutral-400 hover:text-[#111]"><i class="fa-solid fa-circle-xmark"></i></button>
+          </div>
+        </div>
+        <div id="searchList" class="max-h-[60vh] overflow-y-auto pb-2"></div>
+      </div>`);
+
+      const dd = $('#searchDD'), si = $('#searchInput'), list = $('#searchList'), clear = $('#searchClear');
+      si.value = (new URLSearchParams(location.search).get('q') || '').trim();
+      let products = null, active = -1;
+
+      const load = () => products ? Promise.resolve(products)
+        : fetch('product.json').then(r => r.json()).then(d => (products = d.products)).catch(() => (products = []));
+
+      const find = q => {
+        const words = norm(q).split(/\s+/).filter(Boolean).map(w => (w.length > 3 ? w.replace(/s$/, '') : w));
+        if (!words.length || !products) return [];
+        return products.map(p => {
+          const name = norm(p.name), hay = name + ' ' + (GROUP[p.group] || '') + ' ' + norm(p.description || '');
+          return words.every(w => hay.includes(w)) ? { p, score: words.filter(w => name.includes(w)).length } : null;
+        }).filter(Boolean).sort((a, b) => b.score - a.score).map(x => x.p);
+      };
+
+      const chips = () => `
+        <p class="px-4 pb-2 pt-1 text-xs font-semibold uppercase tracking-wide text-neutral-500">Popular searches</p>
+        <div class="flex flex-wrap gap-2 px-4 pb-2">
+          ${POPULAR.map(k => `<a href="${url(k)}" data-row class="rounded-full border border-neutral-300 px-3.5 py-1.5 text-sm hover:border-[#111]">${k}</a>`).join('')}
+        </div>`;
+
+      function render() {
+        const q = si.value.trim();
+        clear.classList.toggle('hidden', !q);
+        active = -1;
+        if (!q) { list.innerHTML = chips(); return; }
+        const found = find(q);
+        if (!found.length) {
+          list.innerHTML = `<p class="px-4 py-3 text-sm text-neutral-600">No products found for “${esc(q)}”.</p>` + chips();
+          return;
+        }
+        list.innerHTML = found.slice(0, 6).map(p => `
+          <a href="product_detail.html?id=${p.id}" data-row class="flex items-center gap-3 px-4 py-2 hover:bg-neutral-100">
+            <img src="${esc(p.image)}" alt="" class="h-[58px] w-[44px] shrink-0 rounded bg-neutral-100 object-cover object-top">
+            <span class="min-w-0 flex-1">
+              <span class="line-clamp-2 block text-sm leading-snug text-neutral-800">${esc(p.name)}</span>
+              <span class="mt-0.5 block text-sm"><b class="text-[#e53935]">${money(p.price)}</b>${p.oldPrice > p.price ? ` <s class="text-neutral-400">${money(p.oldPrice)}</s>` : ''}</span>
+            </span>
+          </a>`).join('') + `
+          <a href="${url(q)}" data-row class="mx-3 mt-1 flex items-center justify-between rounded-lg bg-neutral-100 px-4 py-3 text-sm font-medium hover:bg-neutral-200">
+            <span>See all ${found.length} result${found.length > 1 ? 's' : ''} for “${esc(q)}”</span><i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>`;
+      }
+
+      const rows = () => [...list.querySelectorAll('[data-row]')];
+      const highlight = i => {
+        const r = rows(); if (!r.length) return;
+        active = (i + r.length) % r.length;
+        r.forEach((el, k) => el.classList.toggle('bg-neutral-100', k === active && !el.matches('a.rounded-full')));
+        r[active].scrollIntoView({ block: 'nearest' });
+      };
+
+      function open() {
+        dd.classList.remove('invisible', 'opacity-0', 'translate-y-1');
+        load().then(render);
+        si.focus(); si.select();
+      }
+      function close() { dd.classList.add('invisible', 'opacity-0', 'translate-y-1'); }
+      const isOpen = () => !dd.classList.contains('invisible');
+
+      $('#searchBtn').onclick = e => { e.stopPropagation(); isOpen() ? close() : open(); };
+      si.addEventListener('input', () => load().then(render));
+      clear.addEventListener('click', () => { si.value = ''; render(); si.focus(); });
+      si.addEventListener('keydown', e => {
+        if (e.key === 'ArrowDown') { e.preventDefault(); highlight(active + 1); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); highlight(active - 1); }
+        else if (e.key === 'Enter') {
+          const r = rows();
+          if (active > -1 && r[active]) location.href = r[active].href;
+          else if (si.value.trim()) location.href = url(si.value.trim());
+        } else if (e.key === 'Escape') close();
+      });
+      document.addEventListener('click', e => { if (!sw.contains(e.target)) close(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    })();
+
+    /* ---------- Sidebar menu (hamburger) – slides in from the left ---------- */
+    (function () {
+      const btn = document.querySelector('button[aria-label="Menu"]');
+      document.body.insertAdjacentHTML('beforeend', `
+      <div id="sideOverlay" class="pointer-events-none fixed inset-0 z-[2900] bg-black/50 opacity-0 transition-opacity duration-300"></div>
+      <aside id="sideBar" aria-label="Menu" aria-hidden="true"
+        class="fixed left-0 top-0 z-[2901] flex h-full w-[86%] max-w-[360px] -translate-x-full flex-col bg-white shadow-2xl transition-transform duration-300">
+        <div class="flex h-16 shrink-0 items-center justify-between border-b border-neutral-200 px-5">
+          <a href="index.html" class="flex items-center gap-1 text-[22px] font-extrabold tracking-[2px]">TEN<span class="font-light">•</span>ELEVEN</a>
+          <button id="sideClose" aria-label="Close menu" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-neutral-100"><i class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto">
+          <ul id="sideMenu" class="py-2">
+            ${Object.entries(menu).map(([k, v]) => `
+            <li class="border-b border-neutral-100">
+              <button data-acc class="flex w-full items-center justify-between px-5 py-4 text-left text-[16px] font-semibold">
+                ${k} <i class="fa-solid fa-chevron-down text-xs text-neutral-500 transition-transform duration-300"></i>
+              </button>
+              <div data-panel class="overflow-hidden bg-neutral-50 transition-[max-height] duration-300" style="max-height:0">
+                ${v.map(x => `<a href="#" class="block px-8 py-3 text-[15px] text-neutral-700 hover:bg-neutral-100 hover:text-black">${x}</a>`).join('')}
+              </div>
+            </li>`).join('')}
+          </ul>
+
+          <ul class="py-2 text-[15px]">
+            <li><a href="index.html" class="flex items-center gap-3 px-5 py-3 hover:bg-neutral-100"><i class="fa-solid fa-house w-5 text-center text-neutral-600"></i> Home</a></li>
+            <li><a href="search.html" class="flex items-center gap-3 px-5 py-3 hover:bg-neutral-100"><i class="fa-solid fa-magnifying-glass w-5 text-center text-neutral-600"></i> Search</a></li>
+            <li><button data-open="wish" class="flex w-full items-center gap-3 px-5 py-3 text-left hover:bg-neutral-100"><i class="fa-regular fa-heart w-5 text-center text-neutral-600"></i> Wishlist</button></li>
+            <li><button data-open="bag" class="flex w-full items-center gap-3 px-5 py-3 text-left hover:bg-neutral-100"><i class="fa-solid fa-bag-shopping w-5 text-center text-neutral-600"></i> My Bag</button></li>
+            <li><a href="#" class="flex items-center gap-3 px-5 py-3 hover:bg-neutral-100"><i class="fa-solid fa-location-dot w-5 text-center text-neutral-600"></i> Find a store</a></li>
+            <li><a href="#" class="flex items-center gap-3 px-5 py-3 hover:bg-neutral-100"><i class="fa-regular fa-comment-dots w-5 text-center text-neutral-600"></i> Help &amp; FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="shrink-0 border-t border-neutral-200 px-5 py-4">
+          <div class="flex items-center gap-5 text-xl text-neutral-700">
+            <a href="#" aria-label="Facebook" class="hover:text-[#0052cc]"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram" class="hover:text-[#0052cc]"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok" class="hover:text-[#0052cc]"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+          <p class="mt-3 text-xs text-neutral-500">Powered By TEN11 &copy; 2026</p>
+        </div>
+      </aside>`);
+
+      const side = $('#sideBar'), ov = $('#sideOverlay');
+      const open = () => {
+        side.classList.remove('-translate-x-full');
+        ov.classList.remove('pointer-events-none', 'opacity-0');
+        side.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+      const close = () => {
+        side.classList.add('-translate-x-full');
+        ov.classList.add('pointer-events-none', 'opacity-0');
+        side.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      btn.addEventListener('click', open);
+      $('#sideClose').addEventListener('click', close);
+      ov.addEventListener('click', close);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+      // accordion: one section open at a time
+      side.addEventListener('click', e => {
+        const acc = e.target.closest('[data-acc]');
+        if (acc) {
+          const panel = acc.nextElementSibling, willOpen = panel.style.maxHeight === '0px';
+          side.querySelectorAll('[data-panel]').forEach(p => (p.style.maxHeight = '0px'));
+          side.querySelectorAll('[data-acc] i').forEach(i => (i.style.transform = ''));
+          if (willOpen) { panel.style.maxHeight = panel.scrollHeight + 'px'; acc.querySelector('i').style.transform = 'rotate(180deg)'; }
+          return;
+        }
+        const o = e.target.closest('[data-open]');
+        if (o) { close(); window.Cart && Cart.open(o.dataset.open); }
+      });
+    })();
+
+    const flink = ([icon, text]) => `<li><a href="#" class="group flex items-center gap-3.5 text-[17px] transition-colors hover:text-[#0052cc]"><i class="${icon} w-[22px] text-center text-xl text-neutral-700 transition-colors group-hover:text-[#0052cc]"></i> ${text}</a></li>`;
+    h('#follow', [['fa-brands fa-facebook', 'Facebook'], ['fa-brands fa-instagram', 'Instagram'], ['fa-brands fa-tiktok', 'TikTok']].map(flink).join(''));
+    h('#service', [
+      ['fa-solid fa-headset', 'Online exchange policy'], ['fa-solid fa-shield-halved', 'Privacy Policy'],
+      ['fa-solid fa-circle-info', 'Online Exchange Policy'], ['fa-regular fa-comment-dots', 'FAQs'], ['fa-solid fa-location-dot', 'Find a store']
+    ].map(flink).join(''));
+
+
+    const id = +new URLSearchParams(location.search).get('id');
+
+    fetch('product.json')
+      .then(r => r.json())
+      .then(({ products }) => {
+        const p = products.find(x => x.id === id);
+        if (!p) {
+          $('#app').innerHTML = `<div class="p-20 text-center"><p class="mb-4 text-lg">Product not found.</p><a href="index.html" class="underline">Back to home</a></div>`;
+          return;
+        }
+        render(p, products);
+      })
+      .catch(() => {
+        $('#app').innerHTML = `<div class="p-20 text-center text-neutral-600">Could not load product.json. Run the site through a local server (e.g. <code>npx serve</code>) instead of opening the file directly.</div>`;
+      });
+
+    function render(p, all) {
+      document.title = p.name + ' | TEN11';
+      const related = all.filter(x => x.group === p.group && x.id !== p.id).slice(0, 8);
+      const hasSale = p.oldPrice > p.price;
+      const imgs = (p.images && p.images.length) ? p.images : [p.image];
+
+      $('#app').innerHTML = `
+      <div class="mx-auto flex w-full max-w-[1200px] flex-col md:flex-row">
+        <div class="w-full shrink-0 bg-[#f5f5f5] md:w-[55%]">
+          <div class="flex flex-col md:flex-row">
+            ${imgs.length > 1 ? `
+            <div id="thumbs" class="order-2 flex gap-2 overflow-x-auto p-3 md:order-1 md:max-h-[calc(100vh-112px)] md:flex-col md:overflow-y-auto md:overflow-x-hidden">
+              ${imgs.map((src, i) => `<button data-thumb="${i}" aria-label="Show image ${i + 1}" class="shrink-0 overflow-hidden rounded border-2 border-transparent bg-white transition"><img src="${src}" alt="" class="h-[88px] w-[66px] object-cover object-top"></button>`).join('')}
+            </div>` : ''}
+            <div class="relative order-1 h-[60vh] flex-1 overflow-hidden md:order-2 md:h-[calc(100vh-112px)]">
+              <a href="index.html" aria-label="Back to home" title="Back to home"
+                class="absolute left-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-neutral-100">
+                <i class="fa-solid fa-arrow-left text-sm"></i>
+              </a>
+              <img id="mainImg" src="${imgs[0]}" alt="${p.name}" class="h-full w-full object-cover object-top">
+              ${imgs.length > 1 ? `
+              <button id="imgPrev" aria-label="Previous image" class="absolute left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-neutral-700 shadow hover:bg-white"><i class="fa-solid fa-chevron-left text-sm"></i></button>
+              <button id="imgNext" aria-label="Next image" class="absolute right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-neutral-700 shadow hover:bg-white"><i class="fa-solid fa-chevron-right text-sm"></i></button>
+              <span id="imgCount" class="absolute bottom-3 right-3 z-10 rounded-full bg-black/55 px-2.5 py-1 text-xs text-white"></span>` : ''}
+            </div>
+          </div>
+        </div>
+
+        <div class="flex w-full flex-col px-5 pb-10 pt-6 md:w-[45%] md:px-8 md:pb-16 md:pt-10">
+          <div class="mb-1 flex items-start justify-between gap-3">
+            <h1 class="text-[18px] font-medium leading-snug md:text-[20px]">${p.name}</h1>
+            <button aria-label="Share" id="share" class="mt-0.5 shrink-0 text-neutral-500 hover:text-[#111]"><i class="fa-solid fa-arrow-up-from-bracket text-lg"></i></button>
+          </div>
+
+          <div class="mb-6 text-[18px] font-semibold md:text-[20px]">
+            ${hasSale
+              ? `<span class="text-[#d32030]">${money(p.price)}</span>
+                 <span class="ml-1 text-sm font-medium text-neutral-600">${pct(p.price, p.oldPrice)}</span>
+                 <span class="ml-1 text-sm font-normal text-neutral-400 line-through">${money(p.oldPrice)}</span>`
+              : money(p.price)}
+          </div>
+
+          <div class="mb-6">
+            <p class="mb-2.5 text-[14px] font-medium">Color</p>
+            <div class="flex items-center gap-3">
+              <span class="overflow-hidden rounded border-2 border-[#111] p-0.5">
+                <img src="${p.image}" alt="" class="h-[56px] w-[56px] object-cover object-top">
+              </span>
+              ${p.colors.map(c => `<span class="h-5 w-5 rounded-full border border-neutral-300" style="background:${c}"></span>`).join('')}
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <p id="sizeLabel" class="mb-2.5 text-[14px] font-medium">Please select one size</p>
+            <div class="flex flex-wrap gap-2">
+              ${p.sizes.map(s => `<button data-size="${s}" class="h-10 min-w-[48px] rounded border border-neutral-200 bg-neutral-50 px-3 text-sm font-medium transition hover:border-neutral-400">${s}</button>`).join('')}
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <p class="mb-2.5 text-[14px] font-medium">Quantity</p>
+            <div class="inline-flex h-11 items-center rounded border border-neutral-300">
+              <button id="qtyMinus" aria-label="Decrease quantity" class="flex h-full w-11 items-center justify-center text-neutral-700 transition hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-40"><i class="fa-solid fa-minus text-xs"></i></button>
+              <input id="qty" type="number" inputmode="numeric" min="1" max="10" value="1" aria-label="Quantity"
+                class="h-full w-14 border-x border-neutral-300 text-center text-[15px] font-medium outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none">
+              <button id="qtyPlus" aria-label="Increase quantity" class="flex h-full w-11 items-center justify-center text-neutral-700 transition hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-40"><i class="fa-solid fa-plus text-xs"></i></button>
+            </div>
+          </div>
+
+          <div class="mb-8 flex items-center gap-2.5">
+            <button id="add" disabled class="flex h-12 flex-1 items-center justify-center rounded bg-[#9e9e9e] text-[15px] font-medium text-white transition disabled:cursor-not-allowed enabled:bg-[#111] enabled:hover:bg-[#333]">Add to bag</button>
+            <button id="fav" data-on="false" aria-label="Add to favorites" class="flex h-12 w-12 shrink-0 items-center justify-center rounded border border-neutral-300 text-lg transition hover:border-[#111] data-[on=true]:border-[#e53935] data-[on=true]:text-[#e53935]"><i class="fa-regular fa-heart"></i></button>
+          </div>
+
+          ${[['Model Info', p.modelInfo], ['Description', p.description]].map(([t, b]) => `
+          <div class="border-t border-neutral-200">
+            <button class="acc-toggle flex w-full items-center justify-between py-4 text-left text-[15px] font-medium">${t}<i class="fa-solid fa-chevron-down acc-chevron text-xs text-neutral-500"></i></button>
+            <div class="acc-body"><div class="pb-4 text-[14px] leading-relaxed text-neutral-600">${b}</div></div>
+          </div>`).join('')}
+        </div>
+      </div>
+
+      ${related.length ? `
+      <section class="mx-auto max-w-[1400px] px-4 pb-16 pt-10">
+        <h2 class="mb-6 text-[22px] font-extrabold md:text-[28px]">You May Also Like</h2>
+        <div class="grid grid-cols-2 gap-3 min-[769px]:grid-cols-3 min-[769px]:gap-5 min-[1101px]:grid-cols-4">
+          ${related.map(r => `
+          <a href="product_detail.html?id=${r.id}" class="group block overflow-hidden rounded-[10px] bg-white transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_28px_rgba(0,0,0,.1)]">
+            <div class="aspect-[3/4] w-full overflow-hidden bg-neutral-100"><img src="${r.image}" alt="${r.name}" loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="px-3 pb-4 pt-3.5">
+              <h3 class="mb-2 line-clamp-2 min-h-[34px] text-[13px] font-medium leading-[1.35] text-neutral-800 md:text-sm">${r.name}</h3>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-sm font-bold text-[#e53935]">${money(r.price)}</span>
+                ${r.oldPrice > r.price ? `<span class="text-xs font-semibold text-[#e53935]">${pct(r.price, r.oldPrice)}</span><span class="text-[13px] text-neutral-400 line-through">${money(r.oldPrice)}</span>` : ''}
+              </div>
+            </div>
+          </a>`).join('')}
+        </div>
+      </section>` : ''}`;
+
+      /* Image gallery */
+      let cur = 0;
+      const mainImg = $('#mainImg');
+      const showImg = i => {
+        cur = (i + imgs.length) % imgs.length;
+        mainImg.src = imgs[cur];
+        document.querySelectorAll('[data-thumb]').forEach(t => {
+          const on = +t.dataset.thumb === cur;
+          t.classList.toggle('border-[#111]', on);
+          t.classList.toggle('border-transparent', !on);
+        });
+        const c = $('#imgCount'); if (c) c.textContent = (cur + 1) + ' / ' + imgs.length;
+      };
+      if (imgs.length > 1) {
+        document.querySelectorAll('[data-thumb]').forEach(t => t.addEventListener('click', () => showImg(+t.dataset.thumb)));
+        $('#imgPrev').addEventListener('click', () => showImg(cur - 1));
+        $('#imgNext').addEventListener('click', () => showImg(cur + 1));
+        let x0 = null;
+        mainImg.addEventListener('touchstart', e => (x0 = e.touches[0].clientX), { passive: true });
+        mainImg.addEventListener('touchend', e => {
+          if (x0 === null) return;
+          const dx = e.changedTouches[0].clientX - x0; x0 = null;
+          if (Math.abs(dx) > 40) showImg(cur + (dx < 0 ? 1 : -1));
+        });
+      }
+      showImg(0);
+
+      /* Size select */
+      const add = $('#add');
+      let size = null;
+      document.querySelectorAll('[data-size]').forEach(b => b.addEventListener('click', () => {
+        document.querySelectorAll('[data-size]').forEach(x => x.classList.remove('selected'));
+        b.classList.add('selected');
+        size = b.dataset.size;
+        $('#sizeLabel').textContent = 'Size: ' + size;
+        add.disabled = false;
+      }));
+
+      /* Quantity */
+      const MAX_QTY = 10;
+      const qtyEl = $('#qty'), minus = $('#qtyMinus'), plus = $('#qtyPlus');
+      const getQty = () => Math.min(MAX_QTY, Math.max(1, parseInt(qtyEl.value, 10) || 1));
+      const setQty = v => {
+        qtyEl.value = Math.min(MAX_QTY, Math.max(1, v));
+        minus.disabled = +qtyEl.value <= 1;
+        plus.disabled = +qtyEl.value >= MAX_QTY;
+      };
+      minus.addEventListener('click', () => setQty(getQty() - 1));
+      plus.addEventListener('click', () => setQty(getQty() + 1));
+      qtyEl.addEventListener('change', () => setQty(getQty()));
+      setQty(1);
+
+      /* Add to bag */
+      add.addEventListener('click', () => {
+        if (!size) return;
+        const q = getQty();
+        Cart.add({ id: p.id, name: p.name, price: p.price, oldPrice: p.oldPrice, image: imgs[0], sizes: p.sizes, size, qty: q }, $('#mainImg'));
+        add.textContent = 'Added ' + q + ' ✓';
+        setTimeout(() => (add.textContent = 'Add to bag'), 1500);
+      });
+
+      /* Favorite */
+      $('#fav').addEventListener('click', function () {
+        const on = this.dataset.on !== 'true';
+        this.dataset.on = on;
+        this.querySelector('i').className = on ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
+      });
+
+      /* Share */
+      $('#share').addEventListener('click', () => {
+        navigator.share ? navigator.share({ title: p.name, url: location.href }).catch(() => { })
+          : navigator.clipboard && navigator.clipboard.writeText(location.href);
+      });
+
+      /* Accordions */
+      document.querySelectorAll('.acc-toggle').forEach(btn => btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling, chev = btn.querySelector('.acc-chevron');
+        const open = body.classList.contains('open');
+        document.querySelectorAll('.acc-body').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.acc-chevron').forEach(c => c.classList.remove('rotated'));
+        if (!open) { body.classList.add('open'); chev.classList.add('rotated'); }
+      }));
+    }
+  </script>
+</body>
+
+</html>
